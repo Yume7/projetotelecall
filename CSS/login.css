@@ -1,0 +1,98 @@
+/* Estilos gerais */
+body {
+    background-color: white;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f1f1f1;
+}
+
+/* formulário */
+.form {
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 3rem;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title {
+    color: #003563;
+    margin: 0;
+}
+
+.input-box {
+    margin-bottom: 15px;
+}
+
+.input-box label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: 1px 1px 5px #0000001c;
+}
+
+/* Estilos para o botão "Entrar" e "Cadastrar Novo Usuário" */
+.button-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#enviarButton,
+#cadastrarButton {
+    background-color: #AA0E27;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#cadastrarButton a {
+    color: white;
+    text-decoration: none;
+}
+
+#enviarButton a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Media queries para tornar o formulário responsivo */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .form {
+        padding: 2rem;
+    }
+
+    .input-box input {
+        font-size: 0.9rem;
+    }
+}

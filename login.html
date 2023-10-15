@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="CSS/login.css">
+</head>
+<body>
+    <div class="container">
+        <form class="form" action="javascript:validaLogin()">
+            <div class="form-header">
+                <h1 class="title">Login</h1>
+            </div>
+            <div class="input-box">
+                <label for="login">Nome de Usuário</label>
+                <input type="text" id="login" placeholder="Login">
+            </div>
+            <div class="input-box">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" placeholder="Senha">
+            </div>
+            <div class="button-box">
+                <button id="enviarButton">Entrar</button>
+                <button id="cadastrarButton"><a href="formulario.html">Cadastrar Novo Usuário</a></button>
+            </div>
+        </form>
+    </div>
+
+
+    <script>
+        validaLogin = function () {
+            const usuario = document.getElementById("login").value.toLowerCase();
+            const senha = document.getElementById("senha").value;
+
+            const objetoUsuario = localStorage.getItem(usuario);
+            const usuarioEncontrado = JSON.parse(objetoUsuario);
+                if (usuarioEncontrado != null && usuarioEncontrado.senha === senha) {
+                    usuarioEncontrado.isLogged = true;
+                    const usuarioEncontradoString = JSON.stringify(usuarioEncontrado);
+                    localStorage.setItem(usuario, usuarioEncontradoString);
+                    location.href = 'CPaaShome.html';
+                } else {
+                    alert('Usuário ou senha incorretos');
+                }
+        }
+    </script>
+</body>
+</html>

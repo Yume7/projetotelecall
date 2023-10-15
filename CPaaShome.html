@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPaaS Home</title>
+    <link rel="stylesheet" type="text/css" href="CSS/cpaascss.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="imagens/modavo-1.png" alt="Logo da Empresa">
+        </div>
+        <main>
+            <button id="btnLogin" onclick="javascript:location.href='login.html'">Login</button>
+            <span id="lblBoasVindas"></span>
+            <button id="btnLogout" onclick="javascript:logout()">Sair</button>
+        </main>
+    </header>
+    <nav>
+        <div class="menu">
+            <ul class="nav_links">
+                <li><a href="https://modavo.com.br/cpaas/autentificacao-de-dois-fatores/" target="_blank">Produtos</a></li>
+                <li><a href="https://modavo.com.br/cpaas/tarifas-de-sms/" target="_blank">Tarifas</a></li>
+                <li><a href="https://cpaasapi.telecall.com.br/swagger/index.html" target="_blank">API</a></li>
+                <li><a href="https://modavo.com.br/cpaas/contato/" target="_blank">Central de ajuda</a></li>
+                <li id="linkServicos"><a href="#">Serviços</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-flex">
+        <div class="container">
+            <img src="imagens/modavo-1.png" alt="Logo da Empresa" id="logosecundaria">
+            <h1>CPaaS Plataform</h1>
+        </div>
+        <div id="textomodavo">
+         <p>Descubra a solução de CPaaS da Modavo.<br>
+            Uma solução completa para integrar canais de<br>
+            comunicação empresarial, como SMS, autenticação<br>
+            de dois fatores, números máscara, transcrição de<br>
+            áudio e muito mais. Experimente agora!</p>
+        </div>
+    </div>
+
+    <div class="imgBox">
+        <img src="imagens/oqueé.png">
+        <img src="imagens/Captura de tela 2023-10-14 121757.png">
+        <img src="imagens/Captura de tela 2023-10-14 121847.png">
+    </div>
+
+    <footer>
+        <div id="informacoes-de-contato">
+            0800 654654 54654
+        </div>
+        <div id="links-de-navegacao">
+            <ul class="footer_links">
+                <li><a href="https://modavo.com.br/cpaas/autentificacao-de-dois-fatores/">Produtos</a></li>
+                <li><a href="https://modavo.com.br/cpaas/tarifas-de-sms/">Tarifas</a></li>
+                <li><a href="https://cpaasapi.telecall.com.br/swagger/index.html">API</a></li>
+                <li><a href="https://modavo.com.br/cpaas/contato/">Central de ajuda</a></li>
+                <li><a href="#">Para Empresas</a></li>
+                <li id="linkServicos"><a href="#">Serviços</a></li>
+            </ul>
+        </div>
+        <small><p>&copy; 2023 Projeto ADS. Todos os direitos reservados.</p></small>
+    </footer>
+    
+    <script>
+        let objetoEncontrado = null;
+        const btnLogin = document.getElementById("btnLogin");
+        const labelMostraNome = document.getElementById("lblBoasVindas");
+        const btnLogout = document.getElementById("btnLogout");
+
+        for (let item in localStorage) {
+            if (localStorage.hasOwnProperty(item)) {
+                let objetoString = localStorage.getItem(item);
+                let objeto = JSON.parse(objetoString);
+
+                if (objeto && objeto.isLogged === true) {
+                    objetoEncontrado = objeto;
+                    break; 
+                }
+            }
+        }
+        
+        if (objetoEncontrado) {
+            btnLogin.classList.add("invisible");
+            labelMostraNome.innerText = "Bem vindo(a), " + objetoEncontrado.login;
+            btnLogout.classList.remove("invisible");
+            
+        } else {
+            var linkServicos = document.getElementById("linkServicos");
+            var menuLinks = linkServicos.parentNode;
+            menuLinks.removeChild(linkServicos);
+            btnLogin.classList.remove("invisible");
+            btnLogout.classList.add("invisible");
+        }
+
+        logout=function(){
+            objetoEncontrado.isLogged = false;
+            const objetoEncontradoString = JSON.stringify(objetoEncontrado);
+            const usuario = objetoEncontrado.login.toLowerCase();
+            localStorage.setItem(usuario,objetoEncontradoString);
+            location.href="CPaaShome.html";
+        }
+    </script>
+
+    
+</body>
+</html>
