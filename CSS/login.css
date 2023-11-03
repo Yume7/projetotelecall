@@ -7,6 +7,64 @@ body {
     padding: 0;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #AA0E27;
+    color: white;
+}
+
+.logo img {
+    max-width: 65%;
+    height: auto;
+}
+
+/* header - botões */
+.register-button {
+    font-weight: bold;
+    background-color: #fbfbfb;
+    color: #003563;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 10px;
+}
+
+.login-button {
+    font-weight: bold;
+    background-color: #AA0E27;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 10px;
+}
+
+.login-button a {
+    color: white;
+    text-decoration: none;
+}
+
+.register-button a {
+
+    color:#003563;
+    text-decoration: none;
+}
+
+.login-button:hover {
+    background-color: #a30d26;
+}
+
+.register-button:hover {
+    background-color: #f1f1f1;
+}
+
 .container {
     display: flex;
     justify-content: center;
@@ -16,7 +74,7 @@ body {
 }
 
 /* formulário */
-.form {
+.divForm {
     width: 100%;
     max-width: 600px;
     background-color: #fff;
@@ -79,6 +137,24 @@ body {
 
 #enviarButton a {
     color: white;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #03223c;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer_links {
+    list-style: none;
+    display: flex;
+}
+
+.footer_links>li>a {
+    padding-left: 20px;
+    color: #ffffff;
     text-decoration: none;
 }
 

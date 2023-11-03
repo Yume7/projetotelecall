@@ -1,255 +1,308 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/formulario.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/formulario.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/dark-mode.css" />
     <title>Cadastro</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
-</head>
+    <link rel="icon" href="imagens/logo_telecall_9y6ceW.png" type="image/png" />
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="form">
-            <form action="javascript:validarCampos()">
-                <div class="form-header">
-                    <div class="form-image">
-                        <a href="index.html" target="_blank"><img src="imagens/telecall-logo.svg" alt="Logo da Telecall"></a>
-                    </div>
-                    <div class="title">
-                        <h2>Cadastre-se</h2>
-                    </div>
+      <div class="form">
+        <form action="javascript:validarCampos()">
+          <div class="form-header">
+            <div class="form-image">
+              <a href="index.html" target="_blank"><img src="imagens/telecall-logo.svg" alt="Logo da Telecall" /></a>
+            </div>
+            <div class="title">
+              <h2>Cadastre-se</h2>
+            </div>
+          </div>
 
+          <div class="input-group">
+            <div class="input-box">
+              <label for="nome">Nome completo</label>
+              <input
+                id="nome"
+                type="text"
+                name="nome"
+                minlength="15"
+                maxlength="60"
+                placeholder="Digite seu nome"
+                required
+              />
+            </div>
+            <div class="input-box">
+              <label for="nome_mae">Nome da Mãe</label>
+              <input id="nome_mae" type="text" name="nome_mae" placeholder="Digite o nome da sua mãe" required />
+            </div>
+            <div class="input-box">
+              <label for="CPF">CPF</label>
+              <div class="cpf-input">
+                <input
+                  pattern=".{14,}"
+                  title="CPF deve conter 11 digitos"
+                  type="text"
+                  id="CPF"
+                  value=""
+                  name="CPF"
+                  onkeydown="javascript: fMasc( this, mCPF );"
+                  onfocusout="ValidaCPF()"
+                  placeholder="Digite seu CPF"
+                  maxlength="14"
+                  minlength="14"
+                  required
+                />
+              </div>
+            </div>
+            <div class="input-box">
+              <p id="validacao" class="mensagem-validacao"></p>
+            </div>
+
+            <div class="input-box">
+              <label for="diaa">Data de nascimento:</label>
+              <input type="date" id="diaa" name="diaa" required />
+            </div>
+            <div class="input-box">
+              <label for="cep">CEP</label>
+              <input id="cep" type="text" required />
+            </div>
+            <div class="input-box">
+              <label for="logradouro">Logradouro</label>
+              <input id="logradouro" type="text" required />
+            </div>
+            <div class="input-box">
+              <label for="numero">Número</label>
+              <input id="numero" type="text" />
+            </div>
+            <div class="input-box">
+              <label for="complemento">Complemento</label>
+              <input id="complemento" type="text" />
+            </div>
+            <div class="input-box">
+              <label for="bairro">Bairro</label>
+              <input id="bairro" type="text" required />
+            </div>
+            <div class="input-box">
+              <label for="uf">Estado</label>
+              <select id="uf">
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+              </select>
+            </div>
+
+            <div class="input-box">
+              <div><label for="number">Celular</label></div>
+              <div>
+                +55<input
+                  id="number"
+                  type="tel"
+                  name="number"
+                  maxlength="15"
+                  onkeyup="handlePhone(event)"
+                  placeholder="(xx) xxxx-xxxx"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="input-box">
+              <label for="phone">Telefone Fixo</label>
+              <input
+                id="phone"
+                type="tel"
+                name="phone"
+                maxlength="14"
+                minlength="14"
+                onkeyup="handlePhone(event)"
+                placeholder="(xx) xxxx-xxxx"
+              />
+            </div>
+
+            <div id="crialogin">
+              <div class="input-group">
+                <div class="input-box">
+                  <label for="login">Nome de Usuário</label>
+                  <input
+                    type="text"
+                    id="login"
+                    name="login"
+                    placeholder="Escolha um nome de usuário"
+                    maxlength="6"
+                    minlength="6"
+                    required
+                  />
                 </div>
-
-                <div class="input-group">
-                    <div class="input-box">
-                        <label for="nome">Nome completo</label>
-                        <input id="nome" type="text" name="nome" minlength="15" maxlength="60"
-                            placeholder="Digite seu nome" required>
-                    </div>
-                    <div class="input-box">
-                        <label for="nome_mae">Nome da Mãe</label>
-                        <input id="nome_mae" type="text" name="nome_mae" placeholder="Digite o nome da sua mãe"
-                            required>
-                    </div>
-                    <div class="input-box">
-                        <label for="CPF">CPF</label>
-                        <div class="cpf-input">
-                            <input pattern=".{14,}" title="CPF deve conter 11 digitos" type="text" id="CPF" value="" name="CPF"
-                                onkeydown="javascript: fMasc( this, mCPF );" onfocusout="ValidaCPF()" placeholder="Digite seu CPF" maxlength="14" minlength="14" required/>
-                        </div>
-                    </div>
-                    <div class="input-box">
-                        <p id="validacao" class="mensagem-validacao"></p>
-                    </div>
-
-                    <div class="input-box">
-                        <label for="diaa">Data de nascimento:</label>
-                        <input type="date" id="diaa" name="diaa" required/>
-                    </div>
-                    <div class="input-box">
-                        <label for="cep">CEP</label>
-                        <input id="cep" type="text" required />
-                    </div>
-                    <div class="input-box">
-                        <label for="logradouro">Logradouro</label>
-                        <input id="logradouro" type="text" required />
-                    </div>
-                    <div class="input-box">
-                        <label for="numero">Número</label>
-                        <input id="numero" type="text" />
-                    </div>
-                    <div class="input-box">
-                        <label for="complemento">Complemento</label>
-                        <input id="complemento" type="text" />
-                    </div>
-                    <div class="input-box">
-                        <label for="bairro">Bairro</label>
-                        <input id="bairro" type="text" required />
-                    </div>
-                    <div class="input-box">
-                        <label for="uf">Estado</label>
-                        <select id="uf">
-                            <option value="AC">Acre</option>
-                            <option value="AL">Alagoas</option>
-                            <option value="AP">Amapá</option>
-                            <option value="AM">Amazonas</option>
-                            <option value="BA">Bahia</option>
-                            <option value="CE">Ceará</option>
-                            <option value="DF">Distrito Federal</option>
-                            <option value="ES">Espírito Santo</option>
-                            <option value="GO">Goiás</option>
-                            <option value="MA">Maranhão</option>
-                            <option value="MT">Mato Grosso</option>
-                            <option value="MS">Mato Grosso do Sul</option>
-                            <option value="MG">Minas Gerais</option>
-                            <option value="PA">Pará</option>
-                            <option value="PB">Paraíba</option>
-                            <option value="PR">Paraná</option>
-                            <option value="PE">Pernambuco</option>
-                            <option value="PI">Piauí</option>
-                            <option value="RJ">Rio de Janeiro</option>
-                            <option value="RN">Rio Grande do Norte</option>
-                            <option value="RS">Rio Grande do Sul</option>
-                            <option value="RO">Rondônia</option>
-                            <option value="RR">Roraima</option>
-                            <option value="SC">Santa Catarina</option>
-                            <option value="SP">São Paulo</option>
-                            <option value="SE">Sergipe</option>
-                            <option value="TO">Tocantins</option>
-                        </select>
-                    </div>
-
-                    <div class="input-box">
-                        <div><label for="number">Celular</label></div>
-                        <input id="number" type="tel" name="number" maxlength="15" onkeyup="handlePhone(event)"
-                            placeholder="(xx) xxxx-xxxx" required>
-                    </div>
-
-                    <div class="input-box">
-                        <label for="phone">Telefone Fixo</label>
-                        <input id="phone" type="tel" name="phone" maxlength="14" minlength="14" onkeyup="handlePhone(event)"
-                            placeholder="(xx) xxxx-xxxx" />
-                    </div>
-
-                    <div id="crialogin">
-                        <div class="input-group">
-                            <div class="input-box">
-                                <label for="login">Nome de Usuário</label>
-                                <input type="text" id="login" name="login" placeholder="Escolha um nome de usuário"
-                                    required />
-                            </div>
-                            <div class="input-box">
-                                <label for="senha">Senha</label>
-                                <input type="password" id="senha" name="senha" placeholder="Digite sua senha"
-                                    required />
-                            </div>
-                            <div class="input-box">
-                                <label for="confirmacaoSenha">Confirmar Senha</label>
-                                <input type="password" id="confirmacaoSenha" name="confirmacaoSenha"
-                                    placeholder="Digite sua senha novamente" required />
-                                <span id="senhaMatch" class="mensagem-validacao"></span>
-                            </div>
-
-                        </div>
-                    </div>
-
+                <div class="input-box">
+                  <label for="senha">Senha</label>
+                  <input
+                    type="password"
+                    id="senha"
+                    name="senha"
+                    placeholder="Digite sua senha"
+                    maxlength="6"
+                    minlength="6"
+                    required
+                  />
                 </div>
-
-                <div class="gender-inputs">
-                    <div class="gender-title">
-                        <h3>Gênero</h3>
-                    </div>
-
-                    <div class="gender-group">
-                        <div class="gender-input">
-                            <input id="female" type="radio" name="gender">
-                            <label for="female">Feminino</label>
-                        </div>
-
-                        <div class="gender-input">
-                            <input id="male" type="radio" name="gender">
-                            <label for="male">Masculino</label>
-                        </div>
-
-                        <div class="gender-input">
-                            <input id="others" type="radio" name="gender">
-                            <label for="others">Outros</label>
-                        </div>
-
-                        <div class="gender-input">
-                            <input id="none" type="radio" name="gender">
-                            <label for="none">Prefiro não dizer</label>
-                        </div>
-                    </div>
+                <div class="input-box">
+                  <label for="confirmacaoSenha">Confirmar Senha</label>
+                  <input
+                    type="password"
+                    id="confirmacaoSenha"
+                    name="confirmacaoSenha"
+                    placeholder="Digite sua senha novamente"
+                    required
+                  />
+                  <span id="senhaMatch" class="mensagem-validacao"></span>
                 </div>
+              </div>
+            </div>
+          </div>
 
-                <div class="registrar-submit">
-                    <input type="submit" id="registrarbotao" value="Registrar">
-                </div>
-            </form>
-        </div>
+          <div class="gender-inputs">
+            <div class="gender-title">
+              <h3>Gênero</h3>
+            </div>
+
+            <div class="gender-group">
+              <div class="gender-input">
+                <input id="female" type="radio" name="gender" />
+                <label for="female">Feminino</label>
+              </div>
+
+              <div class="gender-input">
+                <input id="male" type="radio" name="gender" />
+                <label for="male">Masculino</label>
+              </div>
+
+              <div class="gender-input">
+                <input id="others" type="radio" name="gender" />
+                <label for="others">Outros</label>
+              </div>
+
+              <div class="gender-input">
+                <input id="none" type="radio" name="gender" />
+                <label for="none">Prefiro não dizer</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="registrar-submit">
+            <input type="submit" id="registrarbotao" value="Registrar" />
+          </div>
+        </form>
+      </div>
     </div>
-
+    <script src="javascript/dark-mode.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     <script>
-        $("#cep").focusout(function () {
-            $.ajax({
-                url: 'https://viacep.com.br/ws/' + $(this).val() + '/json/',
-                dataType: 'json',
-                success: function (resposta) {
-                    $("#logradouro").val(resposta.logradouro);
-                    $("#complemento").val(resposta.complemento);
-                    $("#bairro").val(resposta.bairro);
-                    $("#cidade").val(resposta.localidade);
-                    $("#uf").val(resposta.uf);
-                    $("#numero").focus();
-                }
-            });
+      $("#cep").focusout(function () {
+        $.ajax({
+          url: "https://viacep.com.br/ws/" + $(this).val() + "/json/",
+          dataType: "json",
+          success: function (resposta) {
+            $("#logradouro").val(resposta.logradouro);
+            $("#complemento").val(resposta.complemento);
+            $("#bairro").val(resposta.bairro);
+            $("#cidade").val(resposta.localidade);
+            $("#uf").val(resposta.uf);
+            $("#numero").focus();
+          },
         });
-    </script>
-
-
-
-    <script>
-        const handlePhone = (event) => {
-            let input = event.target;
-            input.value = phoneMask(input.value);
-        }
-
-        const phoneMask = (value) => {
-            if (!value) return "";
-            value = value.replace(/\D/g, '');
-            value = value.replace(/(\d{2})(\d)/, "($1) $2");
-            value = value.replace(/(\d)(\d{4})$/, "$1-$2");
-            return value;
-        }
+      });
     </script>
 
     <script>
-        function ValidaCPF() {
-            var CPF = document.getElementById("CPF").value;
-            var cpfValido = /^(([0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2})|([0-9]{11}))$/;
-            const mensagemvalida = document.getElementById('validacao');
-            if (cpfValido.test(CPF) == true) {
-                mensagemvalida.innerText = 'Formato Válido';
-                mensagemvalida.classList.remove("invalido");
-                mensagemvalida.classList.add("valido");
-                console.log("CPF Válido");
-            } else {
-                mensagemvalida.innerText = 'Formato Inválido';
-                mensagemvalida.classList.remove("valido");
-                mensagemvalida.classList.add("invalido");
-                console.log("CPF Inválido");
-            }
-        }
+      const handlePhone = (event) => {
+        let input = event.target;
+        input.value = phoneMask(input.value);
+      };
 
-        function fMasc(objeto, mascara) {
-            obj = objeto;
-            masc = mascara;
-            setTimeout("fMascEx()", 1);
-        }
-
-        function fMascEx() {
-            obj.value = masc(obj.value);
-        }
-
-        function mCPF(cpf) {
-            cpf = cpf.replace(/\D/g, "");
-            cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
-            cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
-            cpf = cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
-            return cpf;
-        }
-
+      const phoneMask = (value) => {
+        if (!value) return "";
+        value = value.replace(/\D/g, "");
+        value = value.replace(/(\d{2})(\d)/, "($1) $2");
+        value = value.replace(/(\d)(\d{4})$/, "$1-$2");
+        return value;
+      };
     </script>
 
-<script>
-    function validarCampos() {
+    <script>
+      function ValidaCPF() {
+        var CPF = document.getElementById("CPF").value;
+        var cpfValido = /^(([0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2})|([0-9]{11}))$/;
+        const mensagemvalida = document.getElementById("validacao");
+        if (cpfValido.test(CPF) == true) {
+          mensagemvalida.innerText = "Formato Válido";
+          mensagemvalida.classList.remove("invalido");
+          mensagemvalida.classList.add("valido");
+          console.log("CPF Válido");
+        } else {
+          mensagemvalida.innerText = "Formato Inválido";
+          mensagemvalida.classList.remove("valido");
+          mensagemvalida.classList.add("invalido");
+          console.log("CPF Inválido");
+        }
+      }
+
+      function fMasc(objeto, mascara) {
+        obj = objeto;
+        masc = mascara;
+        setTimeout("fMascEx()", 1);
+      }
+
+      function fMascEx() {
+        obj.value = masc(obj.value);
+      }
+
+      function mCPF(cpf) {
+        cpf = cpf.replace(/\D/g, "");
+        cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
+        cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
+        cpf = cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+        return cpf;
+      }
+    </script>
+
+    <script>
+      $telemovel = $_POST["number"];
+      if (!empty($telemovel)) $telemovel = "+55".$telemovel;
+    </script>
+
+    <script>
+      function validarCampos() {
         var nome = document.getElementById("nome").value;
         var nomeMae = document.getElementById("nome_mae").value;
         var cpf = document.getElementById("CPF").value;
@@ -261,50 +314,58 @@
         var celular = document.getElementById("number").value;
         var telefoneFixo = document.getElementById("phone").value;
 
-        if (nome.trim() === "" || nomeMae.trim() === "" || (cpf.trim() === "" || cpf.length < 14) || diaNascimento.trim() === "" ||
-            cep.trim() === "" || logradouro.trim() === "" || bairro.trim() === "" || uf.trim() === "" || celular.trim() === "") {
-            return false;
+        if (
+          nome.trim() === "" ||
+          nomeMae.trim() === "" ||
+          cpf.trim() === "" ||
+          cpf.length < 14 ||
+          diaNascimento.trim() === "" ||
+          cep.trim() === "" ||
+          logradouro.trim() === "" ||
+          bairro.trim() === "" ||
+          uf.trim() === "" ||
+          celular.trim() === ""
+        ) {
+          return false;
         } else {
-            var nomeUsuario = document.getElementById("login").value;
-            var senha = document.getElementById("senha").value;
-            var confirmacaoSenha = document.getElementById("confirmacaoSenha").value;
-            var senhaMatch = document.getElementById("senhaMatch");
+          var nomeUsuario = document.getElementById("login").value;
+          var senha = document.getElementById("senha").value;
+          var confirmacaoSenha = document.getElementById("confirmacaoSenha").value;
+          var senhaMatch = document.getElementById("senhaMatch");
 
-            if (senha !== confirmacaoSenha || senha == '' || senha == undefined) {
-                senhaMatch.innerText = "As senhas não coincidem. Por favor, insira senhas iguais nos dois campos.";
-                senhaMatch.classList.add("invalido");
-                alert("Senhas digitadas são diferentes ou estão em branco")
-                return false;
-            } else {
-                senhaMatch.innerText = "";
-                senhaMatch.classList.remove("invalido");
+          if (senha !== confirmacaoSenha || senha == "" || senha == undefined) {
+            senhaMatch.innerText = "As senhas não coincidem. Por favor, insira senhas iguais nos dois campos.";
+            senhaMatch.classList.add("invalido");
+            alert("Senhas digitadas são diferentes ou estão em branco");
+            return false;
+          } else {
+            senhaMatch.innerText = "";
+            senhaMatch.classList.remove("invalido");
 
-                const usuario = {
-                    login: nomeUsuario,
-                    nome: nome,
-                    cpf: cpf,
-                    diaNascimento: diaNascimento,
-                    celular: celular,
-                    telefoneFixo: telefoneFixo,
-                    cep: cep,
-                    logradouro: logradouro,
-                    bairro: bairro,
-                    uf: uf,
-                    nomeMae: nomeMae,
-                    senha: senha,
-                    isLogged: false,
-                }
-                const objetoString = JSON.stringify(usuario);
+            const usuario = {
+              login: nomeUsuario,
+              nome: nome,
+              cpf: cpf,
+              diaNascimento: diaNascimento,
+              celular: celular,
+              telefoneFixo: telefoneFixo,
+              cep: cep,
+              logradouro: logradouro,
+              bairro: bairro,
+              uf: uf,
+              nomeMae: nomeMae,
+              senha: senha,
+              isLogged: false,
+            };
+            const objetoString = JSON.stringify(usuario);
 
-                localStorage.setItem(nomeUsuario.toLowerCase(), objetoString);
+            localStorage.setItem(nomeUsuario.toLowerCase(), objetoString);
 
-                alert("Registro bem-sucedido!");
-                location.href = 'login.html';
-            }
+            alert("Registro bem-sucedido!");
+            location.href = "login.html";
+          }
         }
-    }
-</script>
-
-</body>
-
+      }
+    </script>
+  </body>
 </html>
