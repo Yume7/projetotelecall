@@ -1,107 +1,103 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Telecall</title>
-    <link rel="stylesheet" type="text/css" href="CSS/index.css" />
-    <link rel="icon" href="imagens/logo_telecall_9y6ceW.png" type="image/png" />
-    <link rel="stylesheet" type="text/css" href="CSS/dark-mode.css" />
-  </head>
 
-  <body>
-    <header>
-      <div class="logo">
-        <img src="imagens/telecall-logo-white-1.png" alt="Logo da Empresa" />
-      </div>
-      <main>
-        <button id="dark-mode-toggle" onclick="toggleDarkMode()">
-          Dark Mode
-        </button>
-        <a href="login.html" target="_blank"
-          ><button class="login-button">Login</button></a
-        >
-        <a href="formulario.html" target="_blank"
-          ><button class="register-button">Cadastro</button></a
-        >
-      </main>
-    </header>
-    <nav>
-      <div class="menu">
-        <ul class="nav_links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#">Sobre</a></li>
-          <li><a href="#">Produtos</a></li>
-          <li><a href="#">Atendimento</a></li>
-          <li><a href="#">Para Empresas</a></li>
-        </ul>
-      </div>
-    </nav>
-    <h1>Soluções Inteligentes para sua empresa!</h1>
-    <div class="container">
-      <div class="conteudo">
-        <div class="box-text">
-          <h3>Internet</h3>
-          <p>
-            Soluções de internet em fibra de altíssima velocidade e qualidade!
-          </p>
-          <button class="saibamais-button">Saiba mais</button>
-        </div>
-        <div class="box-text">
-          <h3>Telefonia</h3>
-          <p>Soluções de telefonia inteligentes, inovadoras e integradas.</p>
-          <button class="saibamais-button">Saiba mais</button>
-        </div>
-        <div class="box-text">
-          <h3>Celular</h3>
-          <p>Tenha o melhor plano de celular corporativo para sua empresa!</p>
-          <button class="saibamais-button">Saiba mais</button>
-        </div>
-      </div>
-    </div>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Telecall</title>
+	<link rel="stylesheet" type="text/css" href="CSS/index.css" />
+	<link rel="icon" href="imagens/logo_telecall_9y6ceW.png" type="image/png" />
+	<link rel="stylesheet" type="text/css" href="CSS/button-darkmode.css" />
+	<link rel="stylesheet" type="text/css" href="CSS/dark-mode.css" />
+</head>
 
-    <div class="secondBox">
-      <div class="imageWoman">
-        <img
-          src="imagens/side-view-smiley-woman-working-with-laptop-office.jpg"
-          alt="Mulher usando notebook sorrindo"
-        />
-      </div>
-      <div class="textolateral">
-        <h3 id="tittleAbout">What is Lorem Ipsum?</h3>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
-        </p>
-      </div>
-    </div>
+<body>
+	<header>
+		<div class="logo">
+			<a href="index.html" target="_blank"><img src="imagens/telecall-logo-white-1.png" alt="Logo da Empresa" /></a>
+		</div>
+		<main>
+			<a href="login.html" target="_blank"><button class="login-button">Login</button></a>
+			<a href="formulario.html" target="_blank"><button class="register-button">Cadastro</button></a>
+		</main>
+	</header>
+	<nav>
+		<div class="menu">
+			<ul class="nav_links">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="serviços-de-internet.html">Internet</a></li>
+				<li><a href="serviços-de-celular.html">Celular</a></li>
+				<li><a href="serviços-de-telefonia.html">Telefonia</a></li>
+			</ul>
+		</div>
+		<label class="switch">
+			<input id="dark-mode-toggle" type="checkbox" onclick="toggleDarkMode()" />
+			<span class="slider">
+				<svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round"
+					stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+					<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+				</svg>
+			</span>
+		</label>
+	</nav>
+	<h1>Soluções Inteligentes para sua empresa!</h1>
+	<div class="container">
+		<div class="conteudo">
+			<div class="box-text">
+				<h3>Internet</h3>
+				<p>Soluções de internet em fibra de altíssima velocidade e qualidade!</p>
+				<a href="serviços-de-internet.html" target="_blank"><button class="saibamais-button">Saiba mais</button></a>
+			</div>
+			<div class="box-text">
+				<h3>Telefonia</h3>
+				<p>Soluções de telefonia inteligentes, inovadoras e integradas.</p>
+				<a href="serviços-de-telefonia.html" target="_blank"><button class="saibamais-button">Saiba mais</button></a>
+			</div>
+			<div class="box-text">
+				<h3>Celular</h3>
+				<p>Tenha o melhor plano de celular corporativo para sua empresa!</p>
+				<a href="serviços-de-celular.html" target="_blank"><button class="saibamais-button">Saiba mais</button></a>
+			</div>
+		</div>
+	</div>
 
-    <footer>
-      <div id="informacoes-de-contato">
-        <div>(21) 30301010</div>
-      </div>
-      <div id="links-de-navegacao">
-        <ul class="footer_links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#">Sobre</a></li>
-          <li><a href="#">Produtos</a></li>
-          <li><a href="#">Atendimento</a></li>
-          <li><a href="#">Para Empresas</a></li>
-        </ul>
-      </div>
-      <small
-        ><p>&copy; 2023 Projeto ADS. Todos os direitos reservados.</p></small
-      >
-    </footer>
+	<div class="secondBox">
+		<div class="imageWoman">
+			<img src="imagens/side-view-smiley-woman-working-with-laptop-office.jpg" alt="Mulher usando notebook sorrindo" />
+		</div>
+		<div class="textolateral">
+			<h3 id="tittleAbout">What is Lorem Ipsum?</h3>
+			<p>
+				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+				standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+				make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+				typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+				sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+				PageMaker including versions of Lorem Ipsum.
+			</p>
+		</div>
+	</div>
+	
 
-    <script src="javascript/dark-mode.js"></script>
-  </body>
+	<footer>
+		<div id="informacoes-de-contato">
+			<div>(21) 30301010</div>
+		</div>
+		<div id="links-de-navegacao">
+			<ul class="footer_links">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="serviços-de-internet.html">Internet</a></li>
+				<li><a href="serviços-de-celular.html">Celular</a></li>
+				<li><a href="serviços-de-telefonia.html">Telefonia</a></li>
+			</ul>
+		</div>
+		<small>
+			<p>&copy; 2023 Projeto ADS. Todos os direitos reservados.</p>
+		</small>
+	</footer>
+
+	<script src="javascript/dark-mode.js"></script>
+</body>
+
 </html>

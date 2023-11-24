@@ -2,78 +2,120 @@
 
 /* Estilos gerais para o Modo Escuro */
 .dark-mode {
-  background-color: #000;
-  color: #fff;
+	background-color: #07131c;
+	color: #fff;
 }
 
 .dark-mode header {
-  background-color: #182a3b;
+	background-color: #182a3b;
 }
 
-.dark-mode h1 {
-  color: #4f697e;
+.dark-mode h1,
+.dark-mode #tittleAbout {
+	color: #90aac1;
 }
 
+.dark-mode p {
+	color: #90aac1;
+}
 /*pagina login*/
 .dark-mode #divLogin.container {
-  background-color: #07131c;
-  color: #e4e3e3;
+	background-color: #07131c;
+	color: #e4e3e3;
 }
 
 .dark-mode #enviarButton,
 .dark-mode #cadastrarButton,
 .dark-mode #registrarbotao {
-  background-color: #96354b;
+	background-color: #96354b;
 }
 
 .dark-mode form.divForm {
-  background-color: #182a3b;
+	background-color: #182a3b;
 }
 
 /*pagina home*/
 
 .dark-mode .login-button {
-  background-color: #4f697e;
+	background-color: #4f697e;
 }
 
 .dark-mode .register-button {
-  background-color: #96354b;
-  color: #e4e3e3;
+	background-color: #96354b;
+	color: #e4e3e3;
 }
 
 .dark-mode nav {
-  background-color: #030f19;
+	background-color: #030f19;
 }
 
 .dark-mode .nav_links > li > a {
-  color: #e4e3e3;
+	color: #e4e3e3;
 }
 
 .dark-mode .box-text {
-  background: linear-gradient(45deg, rgba(194, 212, 224, 1), rgb(185, 203, 215));
+	background: linear-gradient(45deg, rgba(194, 212, 224, 1), rgb(185, 203, 215));
 }
 
 .dark-mode .box-text > h3 {
-  color: #010520;
+	color: #96354b;
+}
+
+.dark-mode .box-text > p {
+	color: #4f697e;
 }
 
 .dark-mode .saibamais-button {
-  background-color: #96354b;
+	background-color: #4f697e;
 }
 
 .dark-mode .container {
-  background-color: #07131c;
-  color: #e4e3e3;
+	background-color: #07131c;
+	color: #e4e3e3;
 }
 
 .dark-mode .form {
-  background-color: #182a3b;
+	background-color: #182a3b;
 }
 
 .dark-mode .title {
-  color: #e4e3e3;
+	color: #e4e3e3;
 }
 
 .dark-mode .gender-title h3 {
-  color: #4f697e;
+	color: #90aac1;
+}
+
+/*página cpaas*/
+.dark-mode .container-flex-cpaas {
+	display: flex;
+	flex-direction: column;
+	min-height: 50vh;
+	background-image: url("../imagens/rm378-09\ 1.png");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	text-align: center;
+}
+
+.dark-mode .container-flex-cpaas h1 {
+	/* Estilo para o texto que não será afetado pela transparência */
+	color: #bdddf6; /* Cor do texto */
+}
+
+.dark-mode .container-flex-cpaas p {
+	color: #bdddf6;
+}
+
+.dark-mode #logosecundaria {
+	background-color: aliceblue;
+	border-radius: 5px;
+}
+
+.dark-mode #btnLogout {
+	background-color: #4f697e;
+}
+
+.dark-mode #btnLogin {
+	background-color: #96354b;
 }

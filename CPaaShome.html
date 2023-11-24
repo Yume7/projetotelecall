@@ -2,114 +2,367 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CPaaS Home</title>
-    <link rel="stylesheet" type="text/css" href="CSS/cpaascss.css">
-    <link rel="icon" href="imagens/logo_telecall_9y6ceW.png" type="image/png">
-    <link rel="stylesheet" type="text/css" href="CSS/dark-mode.css">
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>CPaaS Home</title>
+	<link rel="stylesheet" type="text/css" href="CSS/cpaascss.css" />
+	<link rel="icon" href="imagens/logo_telecall_9y6ceW.png" type="image/png" />
+	<link rel="stylesheet" type="text/css" href="CSS/button-darkmode.css" />
+	<link rel="stylesheet" type="text/css" href="CSS/dark-mode.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+		rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Saira:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+		rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <img src="imagens/modavo-1.png" alt="Logo da Empresa">
-        </div>
-        <main>
-            <button id="btnLogin" onclick="javascript:location.href='login.html'">Login</button>
-            <span id="lblBoasVindas"></span>
-            <button id="btnLogout" onclick="javascript:logout()">Sair</button>
-        </main>
-    </header>
-    <nav>
-        <div class="menu">
-            <ul class="nav_links">
-                <li><a href="https://modavo.com.br/cpaas/autentificacao-de-dois-fatores/" target="_blank">Produtos</a></li>
-                <li><a href="https://modavo.com.br/cpaas/tarifas-de-sms/" target="_blank">Tarifas</a></li>
-                <li><a href="https://cpaasapi.telecall.com.br/swagger/index.html" target="_blank">API</a></li>
-                <li><a href="https://modavo.com.br/cpaas/contato/" target="_blank">Central de ajuda</a></li>
-                <li id="linkServicos"><a href="#">Serviços</a></li>
-            </ul>
-        </div>
-    </nav>
-    <div class="container-flex">
-        <div class="container">
-            <img src="imagens/modavo-1.png" alt="Logo da Empresa" id="logosecundaria">
-            <h1>CPaaS Plataform</h1>
-        </div>
-        <div id="textomodavo">
-         <p>Descubra a solução de CPaaS da Modavo.<br>
-            Uma solução completa para integrar canais de<br>
-            comunicação empresarial, como SMS, autenticação<br>
-            de dois fatores, números máscara, transcrição de<br>
-            áudio e muito mais. Experimente agora!</p>
-        </div>
-    </div>
+	<nav id="navbar" class="navbar">
+		<div class="menu">
+			<ul class="nav_links">
+				<li><a href="#produtos" class="menu-link">O que é?</a></li>
+				<li><a href="#tarifas" class="menu-link">Vantagens</a></li>
+				<li><a href="#api" class="menu-link">Quem usa?</a></li>
+				<!-- Adicione IDs correspondentes às seções da sua página -->
+				<li><a href="#contato" class="menu-link">Central de Ajuda</a></li>
+				<li class="menu-item" id="linkServicos">
+					<a href="#servicos" class="menu-link">Serviços</a>
+					<ul class="dropdown">
+						<li class="dropdown-item"><a href="#web-design" class="menu-link">2 FA</a></li>
+						<li class="dropdown-item"><a href="#graphic-design" class="menu-link">Número Máscara</a></li>
+						<li class="dropdown-item"><a href="#digital-marketing" class="menu-link">Google Verified Calls</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
 
-    <div class="imgBox">
-        <img src="imagens/oqueé.png">
-        <img src="imagens/Captura de tela 2023-10-14 121757.png">
-        <img src="imagens/Captura de tela 2023-10-14 121847.png">
-    </div>
+		<label class="switch">
+			<input id="dark-mode-toggle" type="checkbox" onclick="toggleDarkMode()" />
+			<span class="slider">
+				<svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round"
+					stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+					<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+				</svg>
+			</span>
+		</label>
 
-    <footer>
-        <div id="informacoes-de-contato">
-            0800 654654 54654
-        </div>
-        <div id="links-de-navegacao">
-            <ul class="footer_links">
-                <li><a href="https://modavo.com.br/cpaas/autentificacao-de-dois-fatores/">Produtos</a></li>
-                <li><a href="https://modavo.com.br/cpaas/tarifas-de-sms/">Tarifas</a></li>
-                <li><a href="https://cpaasapi.telecall.com.br/swagger/index.html">API</a></li>
-                <li><a href="https://modavo.com.br/cpaas/contato/">Central de ajuda</a></li>
-                <li><a href="#">Para Empresas</a></li>
-                <li id="linkServicos"><a href="#">Serviços</a></li>
-            </ul>
-        </div>
-        <small><p>&copy; 2023 Projeto ADS. Todos os direitos reservados.</p></small>
-    </footer>
-    <script src="javascript/dark-mode.js"></script>
-    <script>
-        let objetoEncontrado = null;
-        const btnLogin = document.getElementById("btnLogin");
-        const labelMostraNome = document.getElementById("lblBoasVindas");
-        const btnLogout = document.getElementById("btnLogout");
+	</nav><br>
 
-        for (let item in localStorage) {
-            if (localStorage.hasOwnProperty(item)) {
-                let objetoString = localStorage.getItem(item);
-                let objeto = JSON.parse(objetoString);
+	<header>
+		<div class="logo">
+			<img src="imagens/modavo-1.png" alt="Logo da Empresa" />
+		</div>
+		<main>
+			<button id="btnLogin" onclick="javascript:location.href='login.html'">Login</button>
+			<span id="lblBoasVindas"></span>
+			<button id="btnLogout" onclick="javascript:logout()">Sair</button>
+		</main>
+	</header>
 
-                if (objeto && objeto.isLogged === true) {
-                    objetoEncontrado = objeto;
-                    break; 
-                }
-            }
-        }
-        
-        if (objetoEncontrado) {
-            btnLogin.classList.add("invisible");
-            labelMostraNome.innerText = "Bem vindo(a), " + objetoEncontrado.login;
-            btnLogout.classList.remove("invisible");
-            
-        } else {
-            var linkServicos = document.getElementById("linkServicos");
-            var menuLinks = linkServicos.parentNode;
-            menuLinks.removeChild(linkServicos);
-            btnLogin.classList.remove("invisible");
-            btnLogout.classList.add("invisible");
-        }
+	<div class="container-flex-cpaas">
+		<div class="containerCpaas">
+			<img src="imagens/modavo-1.png" alt="Logo da Empresa" id="logosecundaria" />
+			<h1 id="tituloCpaas">CPaaS Plataform</h1>
+		</div>
+		<div id="textomodavo">
+			<p>
+				Descubra a solução de CPaaS da Modavo.<br />
+				Uma solução completa para integrar canais de<br />
+				comunicação empresarial, como SMS, autenticação<br />
+				de dois fatores, números máscara, transcrição de<br />
+				áudio e muito mais. Experimente agora!
+			</p>
+		</div>
+	</div>
+	<section id="produtos">
+		<div class="imgBox">
+			<div>
+				<img src="imagens/telecall-cpaas-home-min.png" />
+			</div>
+			<div>
+				<p>
+				<h1>O que é?</h1>
 
-        logout=function(){
-            objetoEncontrado.isLogged = false;
-            const objetoEncontradoString = JSON.stringify(objetoEncontrado);
-            const usuario = objetoEncontrado.login.toLowerCase();
-            localStorage.setItem(usuario,objetoEncontradoString);
-            location.href="CPaaShome.html";
-        }
-    </script>
+				<h2>Communications Platform as a Service<br>
+					Plataforma de Comunicação como Serviço</h2>
 
-    
+				É uma solução de software de comunicação que atua<br>
+				como uma base sobre a qual desenvolvedores podem<br>
+				integrar uma variedade de aplicativos.<br><br>
+
+				Métodos de comunicação típicos, como voz, chamadas<br>
+				de vídeo ou mensagens de texto SMS, podem ser<br>
+				incorporados em outros sistemas por meio de APIs que<br>
+				se conectam à plataforma CPaaS.<br><br>
+				Essas APIs permitem que as empresas expandam suas<br>
+				ofertas sem a necessidade de hardware ou software<br>
+				adicional.
+				</p>
+			</div>
+
+		</div>
+	</section>
+
+	<div class="imgBox">
+		<div class="background-azul">
+			<p>
+			<h1 id="textoazul">
+				O CPaaS, com sua escalabilidade,<br>
+				flexibilidade, autenticação e segurança<br>
+				aprimoradas, está revolucionando o modo como<br>
+				as empresas habilitadas em nuvem implementam<br>
+				comunicações de voz, SMS e vídeo.<br></h1>
+			</p>
+		</div>
+	</div>
+	</div>
+
+	<!-- Adicione IDs correspondentes às seções da sua página -->
+	<div class="boxConteudo" id="tarifas">
+		<section class="listVantagens">
+			<h1 class="h1ListaSVG">CPaaS e a Transformação Digital</h1>
+
+			<div class="listaSVG">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="auto" viewBox="0 0 450 340" fill="none">
+					<path d="M323.488 340H0V170V0H338L450 180.119L323.488 340Z" fill="rgba(42,173,229,255)" />
+				</svg>
+				<p>Expectativa de crescimento estimado de<br>
+					<b>$ 8,2 bilhões</b> em 2021
+				</p>
+			</div>
+			<div class="listaSVG">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="auto" viewBox="0 0 450 340" fill="none">
+					<path d="M323.488 340H0V170V0H338L450 180.119L323.488 340Z" fill="rgba(42,173,229,255)" />
+				</svg>
+				<p><b>85%</b> dos profissionais se conectam de<br>
+					maneira diferente com colegas e clientes <br>
+					do que faziam há apenas 5 anos.
+				</p>
+			</div>
+			<div class="listaSVG">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="auto" viewBox="0 0 450 340" fill="none">
+					<path d="M323.488 340H0V170V0H338L450 180.119L323.488 340Z" fill="rgba(42,173,229,255)" />
+				</svg>
+				<p>As receitas de CPaaS estão crescendo<br>
+					mais de <b>40%</b> ao ano. </p>
+			</div>
+			<div class="listaSVG">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="auto" viewBox="0 0 450 340" fill="none">
+					<path d="M323.488 340H0V170V0H338L450 180.119L323.488 340Z" fill="rgba(42,173,229,255)" />
+				</svg>
+				<p><b>CPaaS</b> já ultrapassou o mercado de <b>UCaaS</b><br>
+					(Unified Communication as a Service).
+				</p>
+			</div>
+			<div class="listaSVG">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="auto" viewBox="0 0 450 340" fill="none">
+					<path d="M323.488 340H0V170V0H338L450 180.119L323.488 340Z" fill="rgba(42,173,229,255)" />
+				</svg>
+				<p>Marcas que estão em <b>múltiplos canais</b><br>
+					melhoram a experiência do usuário e aumentam seus
+					resultados. </p>
+			</div>
+		</section>
+
+		<div class="imgLista">
+			<img src="/imagens/Imagem1.jpg" alt="Representação dos serviços">
+		</div>
+	</div>
+
+
+
+	<!-- Conteúdo da seção Tarifas -->
+
+	<h1 class="h1QuemUsa" id="api">Quem usa?</h1>
+	<section class="quemUsa">
+		<div class="listaQuemUsa">
+			<div><img src="/imagens/logisticaimg.png"></div>
+			<div class="textCard">
+				<h3 class="tituloCard">Logística</h3>
+				<p>Acesso seguro com 2FA.<br></p>
+				<p>Uso de números mascarados para
+					proteção de funcionário e cliente.</p>
+				<p>Mantenha o cliente informado
+					sobre entrega e serviços.</p>
+				<p>Verified calling para confirmação
+					de entregas.
+				</p>
+			</div>
+		</div>
+		<div class="listaQuemUsa">
+			<div><img src="/imagens/varejoimg.png"></div>
+			<div class="textCard">
+				<h3 class="tituloCard">Varejo</h3>
+				<p>Compra segura com 2FA.</p>
+
+				<p>Avisos sobre compras e entregas.</p>
+
+				<p>Upsell com novas ofertas e vantagens via SMS ou Verified Calling.</p>
+			</div>
+		</div>
+		<div class="listaQuemUsa">
+			<div><img src="/imagens/callcenterimg.png"></div>
+			<div class="textCard">
+				<h3 class="tituloCard">Call Center</h3>
+				<p>Melhore taxas de abertura utilizando alertas SMS para confirmações.</p>
+				<p>Economia de números com o uso de um único número máscara por todos os agentes.</p>
+				<p>Verified Calling para confirmação de agendamentos.
+				</p>
+			</div>
+		</div>
+		<div class="listaQuemUsa">
+			<div><img src="/imagens/saudeimg.png"></div>
+
+			<div class="textCard">
+				<h3 class="tituloCard">Saúde</h3>
+				<p>Acesso seguro com 2FA.</p>
+				<p>Melhore o agendamento e reduza faltas com lembretes por SMS.
+				<p>Tokens de autorização para procedimentos com 2FA.</p>
+				<p>Verified Calling para avisos de resultados e agendamentos.</p>
+			</div>
+	</section>
+
+	<section>
+		<!-- Conteúdo da seção API -->
+	</section>
+
+	<section id="contato">
+		<!-- Conteúdo da seção Contato -->
+	</section>
+
+	<section id="servicos">
+		<!-- Conteúdo da seção Serviços -->
+	</section>
+
+	<section id="web-design">
+		<!-- Conteúdo da seção Web Design -->
+		<h1>2FA
+			Two-Factor Authentication <br>
+			Autenticação de dois fatores</h1>
+		O 2FA é um procedimento de segurança que garante que serão necessários 2 fatores únicos para liberação de uma
+		ação.
+		O primeiro fator é a senha que o usuário e o segundo pode ser autenticado via token, via detecção de impressão
+		digital, reconhecimento facial, código enviado via sms, entre outros.
+		O 2FA permite que você:
+		• Envie uma senha via SMS, voz ou e-mail para autenticação do usuário.
+		• Adicione uma camada extra de segurança além da senha pessoal.
+		• Ofereça maior segurança para usuários.
+	</section>
+
+	<section id="graphic-design">
+		<!-- Conteúdo da seção Graphic Design -->
+	</section>
+
+	<section id="digital-marketing">
+		<!-- Conteúdo da seção Digital Marketing -->
+	</section>
+
+
+
+
+
+	<footer>
+		<div id="informacoes-de-contato">0800 654654 54654</div>
+		<div id="links-de-navegacao">
+			<ul class="footer_links">
+				<li><a href="https://modavo.com.br/cpaas/autentificacao-de-dois-fatores/">Produtos</a></li>
+				<li><a href="https://modavo.com.br/cpaas/tarifas-de-sms/">Tarifas</a></li>
+				<li><a href="https://cpaasapi.telecall.com.br/swagger/index.html">API</a></li>
+				<li><a href="https://modavo.com.br/cpaas/contato/">Central de ajuda</a></li>
+				<li><a href="#">Para Empresas</a></li>
+				<li id="linkServicos"><a href="#">Serviços</a></li>
+			</ul>
+		</div>
+		<small>
+			<p>&copy; 2023 Projeto ADS. Todos os direitos reservados.</p>
+		</small>
+	</footer>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			var links = document.querySelectorAll('.menu-link');
+
+			links.forEach(function (link) {
+				link.addEventListener('click', function (e) {
+					e.preventDefault();
+
+					var targetId = this.getAttribute('href').substring(1);
+					var targetElement = document.getElementById(targetId);
+
+					if (targetElement) {
+						targetElement.scrollIntoView({ behavior: 'smooth' });
+					}
+				});
+			});
+		});
+
+	</script>
+
+	<script>
+		// Obtém a barra de navegação
+		var navbar = document.getElementById("navbar");
+
+		// Adiciona um ouvinte de rolagem à janela
+		window.onscroll = function () {
+			// Obtém a posição de rolagem vertical
+			var scrollY = window.scrollY || window.pageYOffset;
+
+			// Atualiza a posição da barra de navegação
+			navbar.style.top = scrollY + "px";
+		};
+
+
+	</script>
+
+	<script src="javascript/dark-mode.js"></script>
+	<script>
+		// Inicializa a variável para armazenar informações do usuário logado
+		let objetoEncontrado = null;
+		// Obtém referências aos elementos HTML relevantes
+		const btnLogin = document.getElementById("btnLogin");
+		const labelMostraNome = document.getElementById("lblBoasVindas");
+		const btnLogout = document.getElementById("btnLogout");
+		// Loop através dos itens no localStorage para encontrar o usuário logado
+		for (let item in localStorage) {
+			if (localStorage.hasOwnProperty(item)) {
+				// Obtém o objeto do localStorage e converte para formato JavaScript
+				let objetoString = localStorage.getItem(item);
+				let objeto = JSON.parse(objetoString);
+				// Verifica se o objeto é válido e se o usuário está logado
+				if (objeto && objeto.isLogged === true) {
+					objetoEncontrado = objeto;
+					break;
+				}
+			}
+		}
+		// Verifica se um usuário logado foi encontrado
+		if (objetoEncontrado) {
+			// Esconde o botão de login, exibe uma mensagem de boas-vindas e mostra o botão de logout
+			btnLogin.classList.add("invisible");
+			labelMostraNome.innerText = "Bem vindo(a), " + objetoEncontrado.login;
+			btnLogout.classList.remove("invisible");
+		} else {
+			// Remove o link de serviços do menu, exibe o botão de login e esconde o botão de logout
+			var linkServicos = document.getElementById("linkServicos");
+			var menuLinks = linkServicos.parentNode;
+			menuLinks.removeChild(linkServicos);
+			btnLogin.classList.remove("invisible");
+			btnLogout.classList.add("invisible");
+		}
+		// Função de logout que atualiza o estado de login e redireciona para a página CPaaShome.html
+		logout = function () {
+			objetoEncontrado.isLogged = false;
+			const objetoEncontradoString = JSON.stringify(objetoEncontrado);
+			const usuario = objetoEncontrado.login.toLowerCase();
+			localStorage.setItem(usuario, objetoEncontradoString);
+			location.href = "CPaaShome.html";
+		};
+	</script>
 </body>
+
 </html>

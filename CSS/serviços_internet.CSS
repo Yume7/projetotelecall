@@ -1,0 +1,217 @@
+.container{
+    height: 100vh;
+  }
+  
+  /* header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #aa0e27;
+    color: white;
+  }
+  
+  
+  .logo img {
+    max-width: 65%;
+    height: auto;
+  }
+  
+  /* header - botões */
+  .register-button {
+    font-weight: bold;
+    background-color: #fbfbfb;
+    color: #003563;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 10px;
+  }
+  
+  .login-button {
+    font-weight: bold;
+    background-color: #aa0e27;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 10px;
+  }
+  
+  .login-button a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .register-button a {
+    color: #003563;
+    text-decoration: none;
+  }
+  
+  .login-button:hover {
+    background-color: #a30d26;
+  }
+  
+  .register-button:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Barra de navegação */
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Poppins", sans-serif;
+    align-items: center;
+    color: #202020;
+    box-shadow: 1px 1px 6px #0000001c;
+    padding-right: 40px;
+  }
+  
+  .nav_links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav_links > li > a {
+    padding-left: 20px;
+    color: #202020;
+    text-decoration: none;
+  }
+  
+  /* imagem */
+  
+  .container {
+    width: 100%;
+    height: 270px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(../imagem/mulher-jovem-e-bonita-no-escritorio-em-casa-trabalhando-em-casa-conceito-de-teletrabalho.jpg);
+    background-size: cover;
+    background-position: center center; /* Ajuste conforme necessário */
+    position: relative;
+  }
+  
+  /* Adicionando uma camada extra para o texto sobre a imagem */
+  .container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
+    z-index: 1;
+  
+  }
+  
+  .texto-sobre-imagem {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Poppins", sans-serif;
+    z-index: 2;
+    color: white;
+  }
+  
+  
+  .textoImagem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    
+  }
+  
+  img{
+    text-align: center;
+    display: flex;
+    height: 600px;
+    width: auto;
+  }
+  
+  .texto {
+    font-size: 25px;
+    font-weight: normal;
+    margin-bottom: 20px;
+  }
+  
+  h1{
+    margin-left: 50px ;
+    color: #20105c;;
+  }
+  
+  /* icones informativos */
+  
+  .icones {
+    text-align: center; /* Alinha os ícones no centro da página */
+    margin-left: 250px;
+  }
+  
+  .icone-container {
+    display: inline-block;
+    width: 30%; /* Ajuste a largura conforme necessário */
+    margin: 1%; /* Adiciona margem entre os ícones */
+    text-align: left; /* Alinha o texto à esquerda */
+    font-family:serif;
+  }
+  
+  .icone-container img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+  }
+  
+  
+  
+  /*rodapé*/
+  
+  footer {
+    background-color: #03223c;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  
+  }
+  
+  .footer_links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .footer_links > li > a {
+    padding-left: 20px;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .midiaDiv a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    background: #ffffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    fill: #03223c;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  
+  }
+  
+  .midiaDiv svg{
+    height: 30px; 
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,.2));
+  
+  }
+  
+  .midiaDiv {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
