@@ -11,6 +11,7 @@
 	<title>Cadastro</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
 	<link rel="icon" href="imagens/logo_telecall_9y6ceW.png" type="image/png" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -18,15 +19,23 @@
 		<div class="logo">
 			<a href="index.html" target="_blank"><img src="imagens/telecall-logo-white-1.png" alt="Logo da Empresa" /></a>
 		</div>
-		<label class="switch">
-			<input id="dark-mode-toggle" type="checkbox" onclick="toggleDarkMode()" />
-			<span class="slider">
-				<svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round"
-					stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
-					<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-				</svg>
-			</span>
-		</label>
+		<div class="organizaBtnNav">
+			<button type="button" id="btnAumentar">+</button>
+			<button type="button" id="btnDiminuir">-</button>
+			<label class="switch">
+				<input id="dark-mode-toggle" type="checkbox" onclick="toggleDarkMode()" />
+				<span class="slider">
+					<svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round"
+						stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+						<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+					</svg>
+				</span>
+			</label>
+		</div>
+		<!---
+		<div>
+			<a href="login.html" target="_blank"><button class="login-button">Login</button></a>
+		</div> -->
 	</header>
 
 	<div class="container">
@@ -41,8 +50,9 @@
 				<div class="input-group">
 					<div class="input-box">
 						<label for="nome">Nome completo</label>
-						<input id="nome" type="text" name="nome" minlength="15" maxlength="60" placeholder="Digite seu nome"
-							required />
+						<input id="nome" type="text" name="nome" minlength="15" maxlength="60" onchange="validarNome()"
+							placeholder="Digite seu nome" required />
+						<span id="mensagemErroNome" style="color: red"></span>
 					</div>
 					<div class="input-box">
 						<label for="nome_mae">Nome da Mãe</label>
@@ -132,7 +142,7 @@
 						<div class="testeNum">
 							+55
 							<input id="phone" type="tel" name="phone" maxlength="14" minlength="14" onkeyup="handlePhone(event)"
-								placeholder="(xx) xxxx-xxxx" />
+								placeholder="(xx) xxxx-xxxx" required />
 						</div>
 					</div>
 
@@ -147,8 +157,9 @@
 								<label for="senha">Senha (apenas 8 caracteres alfabéticos)</label>
 								<input type="password" id="senha" name="senha" placeholder="Digite sua senha" maxlength="8"
 									minlength="8" oninput="validarSenha()" required />
+								<span id="mensagemErroSenha" style="color: red"></span>
 							</div>
-							<span id="mensagemErroSenha" style="color: red"></span>
+
 							<div class="input-box">
 								<label for="confirmacaoSenha">Confirmar Senha</label>
 								<input type="password" id="confirmacaoSenha" name="confirmacaoSenha"
@@ -253,6 +264,43 @@
 		</div>
 	</div>
 
+	<footer>
+		<div id="informacoes-de-contato">
+			<div>(21) 30301010</div>
+		</div>
+		<div id="links-de-navegacao">
+			<ul class="footer_links">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="serviços-de-internet.html">Internet</a></li>
+				<li><a href="serviços-de-celular.html">Celular</a></li>
+				<li><a href="serviços-de-telefonia.html">Telefonia</a></li>
+			</ul>
+		</div>
+		<div class="organizaFooter">
+			<small>
+				<p>&copy; 2023 Projeto ADS. Todos os direitos reservados.</p>
+			</small>
+			<div class="iconesBox">
+				<div id="div-icon-facebook">
+					<a href="https://www.facebook.com/TelecallBr"><img src="imagens/facebook.png" id="iconesSociais"
+							target="_blank"></a>
+				</div>
+				<div id="div-icon-whatsapp">
+					<a href="https://api.whatsapp.com/send?phone=552130301010&text=%23Comercial"><img src="imagens/whatsapp.png"
+							id="iconesSociais" target="_blank"></a>
+				</div>
+				<div id="div-icon-instagram">
+					<a href="https://www.instagram.com/telecallbr/"><img src="imagens/instagram.png" id="iconesSociais"
+							target="_blank"></a>
+				</div>
+				<div id="div-icon-linkedin">
+					<a href="https://www.linkedin.com/company/telecall/"><img src="imagens/linkedin.png" id="iconesSociais"
+							target="_blank"></a>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script src="javascript/font-size.js"></script>
 	<script src="javascript/dark-mode.js"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>

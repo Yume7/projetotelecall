@@ -16,7 +16,7 @@
 }
 
 .dark-mode p {
-	color: #90aac1;
+	color: #accce8;
 }
 /*pagina login*/
 .dark-mode #divLogin.container {
@@ -90,13 +90,18 @@
 .dark-mode .container-flex-cpaas {
 	display: flex;
 	flex-direction: column;
-	min-height: 50vh;
-	background-image: url("../imagens/rm378-09\ 1.png");
+	min-height: 100vh;
+	/*background-image: url("../imagens/rm378-09\ 1.png");*/
+	background-image: url("../imagens/retrato-de-jovem-caucasiano-em-estudio-gradiente-azul-rosa-em-luz-de-neon.jpg");
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	text-align: center;
+	filter:brightness(30%);
+	
 }
+
+
 
 .dark-mode .container-flex-cpaas h1 {
 	/* Estilo para o texto que não será afetado pela transparência */
@@ -119,3 +124,51 @@
 .dark-mode #btnLogin {
 	background-color: #96354b;
 }
+
+.dark-mode .paragrafoPadrao>h3 {
+	color:#4F697E;
+}
+.dark-mode .paragrafoPadrao>p {
+	color:#accce8;
+}
+
+.dark-mode .fundoAzul {
+background-color: #182A3B;
+}
+
+.dark-mode .card {
+	background-color: #182A3B;
+	
+}
+
+.dark-mode .card>img {
+	border: 0.5rem solid #ffffff;
+	background-color: #ffffff;
+}
+
+.dark-mode table {
+	color:#90aac1;
+	background-color: #182A3B;
+}
+
+.dark-mode .bgazulClaro {
+	background-color: #182A3B;
+}
+
+.dark-mode .bgazulMedio {
+	background-color: #07131c;
+}
+
+.dark-mode .bgazulForte {
+	background-color: #030f19;
+}
+
+.dark-mode .flexTexto {
+	background-color: #182a3b;
+}
+
+.dark-mode .paragrafoEspecial {
+	background-color: #182a3b;
+}
+
+

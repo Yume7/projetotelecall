@@ -8,41 +8,22 @@ body {
 	filter: saturate(110%);
 }
 
-/* (header) */
-header {
+.organizaBtnNav {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
-	padding: 20px;
-	
-	background-color: #ffffff;
-	color: white;
-	position: relative; /* Adicione esta linha */
-  z-index: index 999; /* Valor maior que a barra de navegação */
+	justify-content: space-evenly;
 }
 
-.logo img {
-	max-width: 55%;
-	height: auto;
-}
 
 #lblBoasVindas {
-	color: #0274be;
+	color: #32a0e9;
 	font-weight: bold;
-	margin: 5px;
+	margin: 10px;
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
 }
 
-.register-button {
-	font-weight: bold;
-	background-color: #fbfbfb;
-	color: #003563;
-	border: none;
-	padding: 10px 20px;
-	border-radius: 5px;
-	cursor: pointer;
-	font-size: 1rem;
-	margin-left: 10px;
-}
+
 
 .login-button {
 	font-weight: bold;
@@ -67,19 +48,24 @@ header {
 	background-color: #f1f1f1;
 }
 
-
+#voltarTopo {
+	background-color: #003563;
+	border: none;
+	border-radius: 50%;
+}
 
 .navbar {
   display: flex;
   justify-content: space-around;
   font-family: "Poppins", sans-serif;
   align-items: center;
-  color: #000000;
+  color: #ffffff;
   box-shadow: 1px 1px 6px #0000001c;
   background: #000000;
   width: 100%;
-	position: relative; /* Adicione esta linha */
-  z-index: 1001; /* Valor maior que a barra de navegação */
+	height: 3.2rem;
+	position: relative; 
+  z-index: 1001; 
 }
 
 .nav_links {
@@ -94,8 +80,8 @@ header {
   font-weight: bold;
 }
 
-.menu-drop {
-  list-style: none;
+.menu-drop>li {
+  list-style-type: none;
   padding: 0;
   margin: 0;
   display: flex;
@@ -106,9 +92,27 @@ header {
   position: relative;
 }
 
+.menu-item>ul>li {
+	list-style-type: none;
+}
+
+.menu-item>ul>li :hover {
+	background-color: #242528;
+	color: #5ebfe9;
+	transition: 0.3ms;
+}
+
 .menu-link {
   text-decoration: none;
-  color: #333;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 8px 12px;
+  display: block;
+}
+
+.linkTelecall {
+  text-decoration: none;
+  color: #ffffff;
   font-weight: bold;
   padding: 8px 12px;
   display: block;
@@ -119,7 +123,7 @@ header {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #f9f9f9;
+  background-color: #000000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -132,15 +136,46 @@ header {
   display: block;
 }
 
+#btnDiminuir,
+#btnAumentar {
+		width: 30px;
+		/* Defina o tamanho desejado */
+		height: 30px;
+		/* Defina a altura desejada */
+		background-color: #add8e6;
+		color: rgb(31, 31, 31);
+		border-radius: 5px;
+		border-style: none;
+		font-family: 'Roboto', sans-serif;
+		font-size: 1rem;
+		font-weight: bold;
+		margin: 5px;
+}
+
 .container-flex-cpaas {
-	display: flex;
-	flex-direction: column;
-	min-height: 50vh;
+	position: relative;
+	min-height: 100vh;
 	background-image: url("../imagens/retrato-de-jovem-caucasiano-em-estudio-gradiente-azul-rosa-em-luz-de-neon.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
-	text-align: center;
 	background-position: 50% center;
+}
+
+.containerCpaas {
+	position: absolute;
+	top: 3%;
+  left: 38%;
+  transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: space-evenly;
+	text-align: center;
+
+
+}
+
+.vazio {
+	width: 50px;
+	height: 50px;
 }
 
 .invisible {
@@ -154,6 +189,10 @@ header {
 	margin-top: 65px;
 }
 
+.fundoAzul {
+	background-color: #e5f3ff;
+}
+
 h1 {
 	color: #18191b;
 	font-size: 40px;
@@ -165,6 +204,7 @@ h1 {
 	text-align: center;
 	margin-bottom: 20px;
 	font-family: 'Saira', sans-serif;
+	font-size: 1.7rem;
 }
 
 #btnLogin {
@@ -191,35 +231,59 @@ h1 {
 	background-color: #2c72a0;
 }
 
-.imgBox {
+/*.imgBox {
 	display: flex;
-	flex-direction: row;
+	justify-content: space-evenly;
 	align-items: center;
+	padding: 3rem;
+	width: 100vw;
+	min-height: 100vh;
+}*/
+#ajusteIMGVerifiedCalls {
+	width: 55%;
+}
+.imgBox {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  
+  margin: 0 auto;
+  max-width: 100vw; /* Defina a largura máxima conforme necessário */
+  min-height: 100vh;
 }
 
 .imgBox img {
-	max-width: 650px;
-	height: auto;
-	margin: 50px;
-	border-radius: 30px;
+	
+  max-width: 100%;
+  height: auto;
+  margin: 30px;
+  border-radius: 30px;
 }
 
-.background-azul {
-	display: flex;
-	flex-direction: column;
-	width: 100vw;
-	height: 26rem;
-	background-color: rgba(42,173,229,255);
-	padding: 2rem;
+
+.paragrafoPadrao {
+	font-size: 1.3rem;
+	font-family: 'Saira', 'Roboto', sans-serif;
+	padding: 1rem;
 }
-#textoazul {
-	color:#f1f1f1;
+
+
+.paragrafoPadrao>h3 {
+	color:#003563;
+}
+
+.paragrafoEspecial {
+	font-size: 1.3rem;
+	font-family: 'Saira', 'Roboto', sans-serif;
+	background-color: #9cdaf4;
+	border-radius: 10px;
+	padding: 1rem;
 	text-align: center;
-	line-height: 1.5;
-	font-size: 2.8rem;
-	font-family: 'Saira', sans-serif;
 }
 
+.organizaSection {
+	padding: 1rem;
+}
 
 .boxConteudo {
 	display: flex;
@@ -229,13 +293,15 @@ h1 {
 
 .imgLista {
 	margin-right: 5rem;
+
 	
 	
 }
 .imgLista>img {
 	border-radius: 10px;
 	border: 1rem solid #ffffff;
-	
+	width: 445px;
+	height: auto;
 	
 }
 
@@ -243,6 +309,8 @@ h1 {
 	display: flex;
 	flex-direction: column; /* Altera a direção do layout para coluna */
   align-items: flex-start;
+	min-height: 100vh;
+	padding: 2rem;
 }
 
 
@@ -261,7 +329,7 @@ h1 {
 
 .listaSVG>p {
 	margin-left: 10px; /* Adicione margem à esquerda para separar o texto do svg */
-  font-size: 1.7rem;
+  font-size: 1.6rem;
 	margin-bottom: 1rem;
 	margin-top: 1rem;
 }
@@ -273,11 +341,19 @@ h1 {
 
 .quemUsa {
 	display: flex;
-	align-items: row;
+	align-items: center;
+	justify-content: center;
 	
 }
 
-.listaQuemUsa {
+#doisFA {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.listaDoisFA {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -285,7 +361,7 @@ h1 {
 height: 400px;
 border-radius: 20px;
 border: 1px solid #9b9b9b;
-background: rgba(7, 19, 28, 0.00);
+background: rgb(243, 243, 243);
 margin: 1rem;
 padding: 1rem;
 }
@@ -299,6 +375,160 @@ padding: 1rem;
 	text-align: center;
 }
 
+
+.card-container {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 20px 0;
+}
+
+.card {
+	width: 235px;
+	height: 350px;
+	margin-bottom: 20px;
+	padding: 20px;
+	text-align: center;
+	/* Centraliza o texto no card */
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.card h2 {
+	font-size: 1.5rem;
+	color: rgba(42,173,229,255);
+	margin-bottom: 15px;
+}
+
+.card img {
+	width: 100%;
+	max-width: 100px;
+	/* Tamanho máximo da imagem */
+	height: auto;
+	border-radius: 10%;
+	margin-bottom: 15px;
+}
+
+.card li {
+	font-size: 1rem;
+	color: #555;
+	line-height: 1.5;
+	text-align: left;
+}
+
+@media (max-width: 768px) {
+	.card {
+		width: 100%;
+	}
+}
+
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+
+}
+
+th,
+td {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+	color: #003563;
+	font-family: 'Saira', 'Roboto', sans-serif;
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+.bgazulClaro {
+	background-color: #88d7f9;
+}
+
+.bgazulMedio {
+	background-color: #5ebfe9;
+}
+
+.bgazulForte {
+	background-color: #2aade5;
+}
+
+.organizaTextoBox {
+	display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+
+}
+
+.flexTexto {
+	width: 300px; /* Para manter 2 textos lado a lado com algum espaço entre eles */
+	height: 350px;
+	margin: 10px;
+	font-size: 1.3rem;
+	font-family: 'Saira', 'Roboto', sans-serif;
+	background-color: #9cdaf4;
+	border-radius: 10px;
+	padding: 1rem;
+	text-align: center;
+}
+
+.flexTexto h1 {
+	font-size: 5rem;
+	margin-bottom: 5px;
+	color: #0274be;
+}
+
+
+
+#smsSubtituloh2 {
+	text-align: center;
+	padding: 1.5rem;
+}
+
+.smsBoxImg {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1rem;
+}
+
+.image-container {
+	display: flex;
+	justify-content: space-between;
+	width: 80%;
+	/* Ajuste conforme necessário */
+	margin: 0 auto;
+	/* Centraliza o contêiner */
+}
+
+.image-container img {
+	width: 100%;
+	height: auto;
+	margin-bottom: 5px;
+	/* Adiciona uma margem inferior para espaçamento */
+}
+
+.image-container p {
+	text-align: center;
+	margin-top: 5px;
+	/* Adiciona uma margem superior para espaçamento */
+}
+
+
+.imgDiagrama img {
+	width: 99vw;
+	min-height: auto;
+}
+
+
+
 footer {
 	background-color: #0e303f;
 	color: #fff;
@@ -307,48 +537,50 @@ footer {
 }
 
 .footer_links {
-	list-style: none;
-	display: flex;
-}
+    list-style: none;
+    display: flex;
+    padding: 0; /* Removendo o preenchimento padrão da lista */
+  }
 
-.footer_links > li > a {
-	padding-left: 20px;
-	color: #ffffff;
-	text-decoration: none;
-}
+  .footer_links > li {
+    margin-right: 20px; /* Adicionando margem entre os itens da lista, ajuste conforme necessário */
+  }
+
+  .footer_links > li > a {
+    color: #ffffff;
+    text-decoration: none;
+  }
 
 
-/* Media query para tornar o layout responsivo */
-@media screen and (max-width: 768px) {
-	.container-flex {
-		flex-direction: column;
+	@media only screen and (max-width: 768px) {
+		.navbar {
+			flex-direction: column;
+			height: auto;
+		}
+	
+		.nav_links {
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+		}
+	
+		.menu-item {
+			margin-right: 0;
+		}
+	
+		.dropdown {
+			position: static;
+			display: none;
+			width: 100%;
+		}
+	
+		.menu-item:hover .dropdown {
+			display: none;
+		}
+	
+		.menu-link {
+			text-align: center;
+			padding: 10px 0;
+		}
 	}
-}
-
-/* Media queries para tornar o cabeçalho responsivo */
-@media screen and (max-width: 768px) {
-	header {
-		flex-direction: column;
-		align-items: flex-start;
-	}
-
-	.menu {
-		margin-top: 20px;
-	}
-
-	.menu ul {
-		flex-direction: column;
-	}
-
-	.menu li {
-		margin-right: 0;
-		margin-bottom: 10px;
-	}
-}
-
-/* Media queries para o conteúdo responsivo */
-@media screen and (max-width: 768px) {
-	.container {
-		padding: 20px;
-	}
-}
+	

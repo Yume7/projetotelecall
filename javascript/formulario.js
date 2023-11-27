@@ -59,8 +59,9 @@ function validarSenha() {
 	var regex = /^[a-zA-Z]+$/;
 
 	if (!regex.test(senhaInput.value)) {
-		mensagemErroSenha.textContent = "A senha deve conter apenas caracteres alfabéticos.";
-		senhaInput.setCustomValidity("A senha deve conter apenas caracteres alfabéticos.");
+		mensagemErroSenha.textContent = "A senha deve conter exatamente 8 caracteres alfabéticos.";
+		senhaInput.setCustomValidity("A senha deve conter exatamente 8 caracteres alfabéticos.");
+		return false;
 	} else {
 		mensagemErroSenha.textContent = "";
 		senhaInput.setCustomValidity("");
@@ -68,9 +69,7 @@ function validarSenha() {
 }
 
 //ouvinte de eventos para redefinir a mensagem de erro quando o usuário começa a digitar
-document.getElementById("senha").addEventListener("keydown", function () {
-	document.getElementById("mensagemErroSenha").textContent = "";
-});
+
 
 //MODAL
 var modal = document.getElementById("myModal");
@@ -190,15 +189,38 @@ function ValidaCPF() {
 	cpfValido = true; // CPF válido
 	return true;
 }
+//valida campo nome
+let nomeValido = false;
+
+function validarNome() {
+	var nome = document.getElementById("nome").value;
+	var mensagemErroNome = document.getElementById("mensagemErroNome");
+
+	// Validação de nome com caracteres alfabéticos e espaços
+	var nomeAlfabeticoRegex = /^[a-zA-Z\s]+$/;
+
+	if (!nome.match(nomeAlfabeticoRegex)) {
+		mensagemErroNome.innerText = "O nome deve conter somente caracteres alfabéticos e espaços.";
+		mensagemErroNome.classList.add("invalido");
+		nomeValido = false;
+	} else {
+		mensagemErroNome.innerText = "";
+		mensagemErroNome.classList.remove("invalido");
+		nomeValido = true;
+	}
+}
+
 
 function validarCampos() {
 	// Verifica se o CPF é válido antes de prosseguir
 	if (!cpfValido) {
-		alert("Corrija o CPF antes de enviar o formulário.");
+		console.log('cpf não está valido, return false...');
 		return false;
 	}
 
+	validarNome();
 	// Restante do código para validar os campos
+	var campoNome = document.getElementById("nome");
 	var nome = document.getElementById("nome").value;
 	var nomeMae = document.getElementById("nome_mae").value;
 	var cpf = document.getElementById("CPF").value;
@@ -209,6 +231,12 @@ function validarCampos() {
 	var uf = document.getElementById("uf").value;
 	var celular = document.getElementById("number").value;
 
+
+	if (!nomeValido) {
+		campoNome.focus();
+		return false;
+
+	}
 
 	if (
 		nome.trim() === "" ||
@@ -228,13 +256,29 @@ function validarCampos() {
 		var senha = document.getElementById("senha").value;
 		var confirmacaoSenha = document.getElementById("confirmacaoSenha").value;
 		var senhaMatch = document.getElementById("senhaMatch");
+		var mensagemErroSenha = document.getElementById("mensagemErroSenha");
+
+		// Validação de senha com caracteres alfabéticos
+		var senhaAlfabeticaRegex = /^[a-zA-Z]+$/;
+		if (!senha.match(senhaAlfabeticaRegex)) {
+			mensagemErroSenha.innerText = "A senha deve conter exatamente 8 caracteres alfabéticos.";
+			mensagemErroSenha.classList.add("invalido");
+			return false;
+		} else {
+			mensagemErroSenha.innerText = "";
+			mensagemErroSenha.classList.remove("invalido");
+		}
 
 		if (senha !== confirmacaoSenha || senha == "" || senha == undefined) {
 			senhaMatch.innerText = "As senhas não coincidem. Por favor, insira senhas iguais nos dois campos.";
 			senhaMatch.classList.add("invalido");
-			alert("Senhas digitadas são diferentes ou estão em branco");
 			return false;
-		} else {
+		}
+		else if (senha.length !== 8) {
+			senhaMatch.innerText = "A senha deve ter exatamente 8 caracteres alfabéticos";
+			senhaMatch.classList.add("invalido");
+		}
+		else {
 			senhaMatch.innerText = "";
 			senhaMatch.classList.remove("invalido");
 
