@@ -1,0 +1,300 @@
+body {
+	background-color: white;
+	color: black;
+	font-family: 'Roboto', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.container{
+    height: 100vh;
+  }
+  
+  /* header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #aa0e27;
+    color: white;
+  }
+  
+  
+  .logo img {
+    max-width: 65%;
+    height: auto;
+  }
+  
+  /* header - botões 
+  .register-button {
+    font-weight: bold;
+    background-color: #fbfbfb;
+    color: #003563;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 10px;
+  }
+  
+  .register-button a {
+    color: #003563;
+    text-decoration: none;
+  }
+
+  .register-button:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .login-button {
+    font-weight: bold;
+    background-color: #aa0e27;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 10px;
+  }
+  
+  .login-button a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .login-button:hover {
+    background-color: #a30d26;
+  }*/
+  
+  
+  /* Barra de navegação */
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Poppins", sans-serif;
+    align-items: center;
+    color: #202020;
+    box-shadow: 1px 1px 6px #0000001c;
+    padding-right: 40px;
+  }
+  
+  .nav_links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav_links > li > a {
+    padding-left: 20px;
+    color: #202020;
+    text-decoration: none;
+  }
+  
+  /*botao de acessibilidade*/
+#btnDiminuir,
+#btnAumentar {
+		width: 30px;
+		/* Defina o tamanho desejado */
+		height: 30px;
+		/* Defina a altura desejada */
+		background-color: #add8e6;
+		color: rgb(31, 31, 31);
+		border-radius: 5px;
+		border-style: none;
+		font-family: 'Roboto', sans-serif;
+		font-size: 1rem;
+		font-weight: bold;
+		margin: 5px;
+}
+
+.organizaBtnNav {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+
+  
+  /* imagem */
+  
+  .container {
+    width: 100%;
+    height: 270px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(../imagem/retrato-de-uma-bela-mulher-sorridente-trabalhando-em-casa-falando-ao-celular-chamando-o-cliente.jpg);
+    background-size: cover;
+    background-position: center center; /* Ajuste conforme necessário */
+    position: relative;
+  }
+  
+  /* Adicionando uma camada extra para o texto sobre a imagem */
+  .container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
+    z-index: 1;
+  
+  }
+  
+  .texto-sobre-imagem {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    font-family: "Roboto", sans-serif;
+    z-index: 2;
+    color: white;
+  }
+  .texto-sobre-imagem >h2 {
+    font-size:2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .texto-sobre-imagem >p {
+    font-size:1.5rem;
+   
+  }
+  
+  
+  
+  .textoImagem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px;
+    font-family:'Roboto', sans-serif;
+  }
+  
+  img{
+    text-align: center;
+    display: flex;
+    height: 500px;
+    width: auto;
+  }
+  
+  .texto {
+    font-size: 25px;
+    font-weight: normal;
+    margin-bottom: 20px;
+  }
+  
+  
+  h1{
+    margin-left: 50px ;
+    color: #20105c;
+    font-family:'Roboto', sans-serif;
+  }
+  
+  
+  
+  /* icones informativos */
+  
+  .icones {
+    text-align: center; /* Alinha os ícones no centro da página */
+    margin-left: 250px;
+  }
+
+  .iconeTexto{
+    font-family:'Roboto', sans-serif;
+  }
+  
+  .icone-container {
+    display: inline-block;
+    width: 30%; /* Ajuste a largura conforme necessário */
+    margin: 1%; /* Adiciona margem entre os ícones */
+    text-align: left; /* Alinha o texto à esquerda */
+    font-family:serif;
+  }
+  
+  .icone-container img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+  }
+  
+  
+  
+  
+  /*rodapé*/
+  
+  footer {
+    background-color: #03223c;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  
+  }
+  
+  .footer_links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .footer_links > li > a {
+    padding-left: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-family:'Roboto', sans-serif;
+  }
+  
+  .iconesBox{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+    margin: 1rem;
+    width: 6.8rem;
+    gap: 7px;
+  
+  } 
+  
+  .organizaFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family:'Roboto', sans-serif;
+  }
+  
+  #iconesSociais {
+    width: 2.5rem;
+    height: auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .menu {
+      margin-top: 20px;
+    }
+  
+    .menu ul {
+      flex-direction: column;
+    }
+  
+    .menu li {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+  
+  /* Media queries para o conteúdo responsivo */
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .logo img {
+      max-width: 50%;
+    }
+  }

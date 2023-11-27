@@ -1,0 +1,174 @@
+/* dark-mode.css */
+
+/* Estilos gerais para o Modo Escuro */
+.dark-mode {
+	background-color: #07131c;
+	color: #fff;
+}
+
+.dark-mode header {
+	background-color: #182a3b;
+}
+
+.dark-mode h1,
+.dark-mode #tittleAbout {
+	color: #90aac1;
+}
+
+.dark-mode p {
+	color: #accce8;
+}
+/*pagina login*/
+.dark-mode #divLogin.container {
+	background-color: #07131c;
+	color: #e4e3e3;
+}
+
+.dark-mode #enviarButton,
+.dark-mode #cadastrarButton,
+.dark-mode #registrarbotao {
+	background-color: #96354b;
+}
+
+.dark-mode form.divForm {
+	background-color: #182a3b;
+}
+
+/*pagina home*/
+
+.dark-mode .login-button {
+	background-color: #4f697e;
+}
+
+.dark-mode .register-button {
+	background-color: #96354b;
+	color: #e4e3e3;
+}
+
+.dark-mode nav {
+	background-color: #030f19;
+}
+
+.dark-mode .nav_links > li > a {
+	color: #e4e3e3;
+}
+
+.dark-mode .box-text {
+	background: linear-gradient(45deg, rgba(194, 212, 224, 1), rgb(185, 203, 215));
+}
+
+.dark-mode .box-text > h3 {
+	color: #96354b;
+}
+
+.dark-mode .box-text > p {
+	color: #4f697e;
+}
+
+.dark-mode .saibamais-button {
+	background-color: #4f697e;
+}
+
+.dark-mode .container {
+	background-color: #07131c;
+	color: #e4e3e3;
+}
+
+.dark-mode .form {
+	background-color: #182a3b;
+}
+
+.dark-mode .title {
+	color: #e4e3e3;
+}
+
+.dark-mode .gender-title h3 {
+	color: #90aac1;
+}
+
+/*página cpaas*/
+.dark-mode .container-flex-cpaas {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	/*background-image: url("../imagens/rm378-09\ 1.png");*/
+	background-image: url("../imagens/retrato-de-jovem-caucasiano-em-estudio-gradiente-azul-rosa-em-luz-de-neon.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	text-align: center;
+	filter:brightness(30%);
+	
+}
+
+
+
+.dark-mode .container-flex-cpaas h1 {
+	/* Estilo para o texto que não será afetado pela transparência */
+	color: #bdddf6; /* Cor do texto */
+}
+
+.dark-mode .container-flex-cpaas p {
+	color: #bdddf6;
+}
+
+.dark-mode #logosecundaria {
+	background-color: aliceblue;
+	border-radius: 5px;
+}
+
+.dark-mode #btnLogout {
+	background-color: #4f697e;
+}
+
+.dark-mode #btnLogin {
+	background-color: #96354b;
+}
+
+.dark-mode .paragrafoPadrao>h3 {
+	color:#4F697E;
+}
+.dark-mode .paragrafoPadrao>p {
+	color:#accce8;
+}
+
+.dark-mode .fundoAzul {
+background-color: #182A3B;
+}
+
+.dark-mode .card {
+	background-color: #182A3B;
+	
+}
+
+.dark-mode .card>img {
+	border: 0.5rem solid #ffffff;
+	background-color: #ffffff;
+}
+
+.dark-mode table {
+	color:#90aac1;
+	background-color: #182A3B;
+}
+
+.dark-mode .bgazulClaro {
+	background-color: #182A3B;
+}
+
+.dark-mode .bgazulMedio {
+	background-color: #07131c;
+}
+
+.dark-mode .bgazulForte {
+	background-color: #030f19;
+}
+
+.dark-mode .flexTexto {
+	background-color: #182a3b;
+}
+
+.dark-mode .paragrafoEspecial {
+	background-color: #182a3b;
+}
+
+

@@ -1,223 +1,586 @@
 /* Estilos gerais */
 body {
-    background-color: white;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    filter: saturate(110%);
+	background-color: white;
+	color: black;
+	font-family: 'Roboto', sans-serif;
+	margin: 0;
+	padding: 0;
+	filter: saturate(110%);
 }
 
-
-
-/* (header) */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #ffffff;
-    color: white;
-}
-
-.logo img {
-    max-width: 55%;
-    height: auto;
+.organizaBtnNav {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
 }
 
 
 #lblBoasVindas {
-    color: #0274be;
-    font-weight: bold;
-    margin: 5px;
+	color: #32a0e9;
+	font-weight: bold;
+	margin: 10px;
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
 }
 
-.register-button {
-    font-weight: bold;
-    background-color: #fbfbfb;
-    color: #003563;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-left: 10px;
-}
+
 
 .login-button {
-    font-weight: bold;
-    background-color: #AA0E27;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-left: 10px;
+	font-weight: bold;
+	background-color: #aa0e27;
+	color: #ffffff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 1rem;
+	margin-left: 10px;
 }
 
-.login-button a, .register-button a {
-    color: white;
-    text-decoration: none;
+.login-button a,
+.register-button a {
+	color: white;
+	text-decoration: none;
 }
 
-.login-button:hover, .register-button:hover {
-    background-color: #f1f1f1;
+.login-button:hover,
+.register-button:hover {
+	background-color: #f1f1f1;
 }
 
-
-
-nav {
-    display: flex;
-    justify-content: space-around;
-    font-family: 'Poppins', sans-serif;
-    align-items: center;
-    color: #000000;
-    box-shadow: 1px 1px 6px #0000001c;
-    background: #000000;
+#voltarTopo {
+	background-color: #003563;
+	border: none;
+	border-radius: 50%;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  font-family: "Poppins", sans-serif;
+  align-items: center;
+  color: #ffffff;
+  box-shadow: 1px 1px 6px #0000001c;
+  background: #000000;
+  width: 100%;
+	height: 3.2rem;
+	position: relative; 
+  z-index: 1001; 
+}
 
 .nav_links {
-    list-style: none;
-    display: flex;
+  list-style: none;
+  display: flex;
 }
 
-.nav_links>li>a {
-    padding-left: 20px;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
+.nav_links > li > a {
+  padding-left: 20px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-
-.container-flex {
-    display: grid;
-    min-height: 50vh;
-    background-image: url("../imagens/retrato-de-jovem-caucasiano-em-estudio-gradiente-azul-rosa-em-luz-de-neon.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    text-align: center;
+.menu-drop>li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
 }
 
+.menu-item {
+  margin-right: 20px;
+  position: relative;
+}
+
+.menu-item>ul>li {
+	list-style-type: none;
+}
+
+.menu-item>ul>li :hover {
+	background-color: #242528;
+	color: #5ebfe9;
+	transition: 0.3ms;
+}
+
+.menu-link {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 8px 12px;
+  display: block;
+}
+
+.linkTelecall {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 8px 12px;
+  display: block;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #000000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+  margin: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.menu-item:hover .dropdown {
+  display: block;
+}
+
+#btnDiminuir,
+#btnAumentar {
+		width: 30px;
+		/* Defina o tamanho desejado */
+		height: 30px;
+		/* Defina a altura desejada */
+		background-color: #add8e6;
+		color: rgb(31, 31, 31);
+		border-radius: 5px;
+		border-style: none;
+		font-family: 'Roboto', sans-serif;
+		font-size: 1rem;
+		font-weight: bold;
+		margin: 5px;
+}
+
+.container-flex-cpaas {
+	position: relative;
+	min-height: 100vh;
+	background-image: url("../imagens/retrato-de-jovem-caucasiano-em-estudio-gradiente-azul-rosa-em-luz-de-neon.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% center;
+}
+
+.containerCpaas {
+	position: absolute;
+	top: 3%;
+  left: 38%;
+  transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: space-evenly;
+	text-align: center;
+
+
+}
+
+.vazio {
+	width: 50px;
+	height: 50px;
+}
 
 .invisible {
-    display: none;
+	display: none;
 }
 
-
-
-
-
 #logosecundaria {
-    max-width: 45%;
-    height: auto;
-    filter: saturate(50%);
-    margin-top: 65px;
+	max-width: 45%;
+	height: auto;
+	filter: saturate(50%);
+	margin-top: 65px;
+}
+
+.fundoAzul {
+	background-color: #e5f3ff;
 }
 
 h1 {
-    color: #004471;
-    font-size: 40px;
+	color: #18191b;
+	font-size: 40px;
+	font-family: 'Saira', sans-serif;
 }
 
 #textomodavo {
-    color: #000000;
-    text-align: center;
-    margin-bottom: 20px;
-
+	color: #000000;
+	text-align: center;
+	margin-bottom: 20px;
+	font-family: 'Saira', sans-serif;
+	font-size: 1.7rem;
 }
 
 #btnLogin {
-    background-color: #0274be;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
+	background-color: #0274be;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 1rem;
 }
 
 #btnLogout {
-
-    background-color: #a6c4d8;
-    color: white;
-    border: none;
-    padding: 8px 18px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-
+	background-color: #a6c4d8;
+	color: white;
+	border: none;
+	padding: 8px 18px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 1rem;
 }
 
 #btnLogout:hover {
-    background-color: #2c72a0;
+	background-color: #2c72a0;
 }
 
+/*.imgBox {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 3rem;
+	width: 100vw;
+	min-height: 100vh;
+}*/
+#ajusteIMGVerifiedCalls {
+	width: 55%;
+}
 .imgBox {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  
+  margin: 0 auto;
+  max-width: 100vw; /* Defina a largura máxima conforme necessário */
+  min-height: 100vh;
 }
 
 .imgBox img {
-    width: 100%;
-    height: auto;
+	
+  max-width: 100%;
+  height: auto;
+  margin: 30px;
+  border-radius: 30px;
 }
 
+
+.paragrafoPadrao {
+	font-size: 1.3rem;
+	font-family: 'Saira', 'Roboto', sans-serif;
+	padding: 1rem;
+}
+
+
+.paragrafoPadrao>h3 {
+	color:#003563;
+}
+
+.paragrafoEspecial {
+	font-size: 1.3rem;
+	font-family: 'Saira', 'Roboto', sans-serif;
+	background-color: #9cdaf4;
+	border-radius: 10px;
+	padding: 1rem;
+	text-align: center;
+}
+
+.organizaSection {
+	padding: 1rem;
+}
+
+.boxConteudo {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.imgLista {
+	margin-right: 5rem;
+
+	
+	
+}
+.imgLista>img {
+	border-radius: 10px;
+	border: 1rem solid #ffffff;
+	width: 445px;
+	height: auto;
+	
+}
+
+.listVantagens {
+	display: flex;
+	flex-direction: column; /* Altera a direção do layout para coluna */
+  align-items: flex-start;
+	min-height: 100vh;
+	padding: 2rem;
+}
+
+
+.listaSVG {
+	display: flex;
+  align-items: center;
+  margin-left: 2rem;
+  
+}
+
+
+
+.h1ListaSVG {
+	margin-left: 1rem;
+}
+
+.listaSVG>p {
+	margin-left: 10px; /* Adicione margem à esquerda para separar o texto do svg */
+  font-size: 1.6rem;
+	margin-bottom: 1rem;
+	margin-top: 1rem;
+}
+
+.listaSVG>svg {
+	vertical-align: middle;
+	margin-right: 10px;
+}
+
+.quemUsa {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+}
+
+#doisFA {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.listaDoisFA {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 250px;
+height: 400px;
+border-radius: 20px;
+border: 1px solid #9b9b9b;
+background: rgb(243, 243, 243);
+margin: 1rem;
+padding: 1rem;
+}
+
+.tituloCard {
+	color: #0274be;
+}
+
+.textCard{
+	font-family: 'Saira', sans-serif ;
+	text-align: center;
+}
+
+
+.card-container {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 20px 0;
+}
+
+.card {
+	width: 235px;
+	height: 350px;
+	margin-bottom: 20px;
+	padding: 20px;
+	text-align: center;
+	/* Centraliza o texto no card */
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.card h2 {
+	font-size: 1.5rem;
+	color: rgba(42,173,229,255);
+	margin-bottom: 15px;
+}
+
+.card img {
+	width: 100%;
+	max-width: 100px;
+	/* Tamanho máximo da imagem */
+	height: auto;
+	border-radius: 10%;
+	margin-bottom: 15px;
+}
+
+.card li {
+	font-size: 1rem;
+	color: #555;
+	line-height: 1.5;
+	text-align: left;
+}
+
+@media (max-width: 768px) {
+	.card {
+		width: 100%;
+	}
+}
+
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+
+}
+
+th,
+td {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+	color: #003563;
+	font-family: 'Saira', 'Roboto', sans-serif;
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+.bgazulClaro {
+	background-color: #88d7f9;
+}
+
+.bgazulMedio {
+	background-color: #5ebfe9;
+}
+
+.bgazulForte {
+	background-color: #2aade5;
+}
+
+.organizaTextoBox {
+	display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+
+}
+
+.flexTexto {
+	width: 300px; /* Para manter 2 textos lado a lado com algum espaço entre eles */
+	height: 350px;
+	margin: 10px;
+	font-size: 1.3rem;
+	font-family: 'Saira', 'Roboto', sans-serif;
+	background-color: #9cdaf4;
+	border-radius: 10px;
+	padding: 1rem;
+	text-align: center;
+}
+
+.flexTexto h1 {
+	font-size: 5rem;
+	margin-bottom: 5px;
+	color: #0274be;
+}
+
+
+
+#smsSubtituloh2 {
+	text-align: center;
+	padding: 1.5rem;
+}
+
+.smsBoxImg {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1rem;
+}
+
+.image-container {
+	display: flex;
+	justify-content: space-between;
+	width: 80%;
+	/* Ajuste conforme necessário */
+	margin: 0 auto;
+	/* Centraliza o contêiner */
+}
+
+.image-container img {
+	width: 100%;
+	height: auto;
+	margin-bottom: 5px;
+	/* Adiciona uma margem inferior para espaçamento */
+}
+
+.image-container p {
+	text-align: center;
+	margin-top: 5px;
+	/* Adiciona uma margem superior para espaçamento */
+}
+
+
+.imgDiagrama img {
+	width: 99vw;
+	min-height: auto;
+}
+
+
+
 footer {
-    background-color: #0e303f;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+	background-color: #0e303f;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
 }
 
 .footer_links {
     list-style: none;
     display: flex;
-}
+    padding: 0; /* Removendo o preenchimento padrão da lista */
+  }
 
-.footer_links>li>a {
-    padding-left: 20px;
+  .footer_links > li {
+    margin-right: 20px; /* Adicionando margem entre os itens da lista, ajuste conforme necessário */
+  }
+
+  .footer_links > li > a {
     color: #ffffff;
     text-decoration: none;
-}
+  }
 
 
-
-/* Media query para tornar o layout responsivo */
-@media screen and (max-width: 768px) {
-    .container-flex {
-        flex-direction: column;
-    }
-}
-
-
-/* Media queries para tornar o cabeçalho responsivo */
-@media screen and (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .menu {
-        margin-top: 20px;
-    }
-
-    .menu ul {
-        flex-direction: column;
-    }
-
-    .menu li {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-}
-
-
-
-/* Media queries para o conteúdo responsivo */
-@media screen and (max-width: 768px) {
-    .container {
-        padding: 20px;
-    }
-}
+	@media only screen and (max-width: 768px) {
+		.navbar {
+			flex-direction: column;
+			height: auto;
+		}
+	
+		.nav_links {
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+		}
+	
+		.menu-item {
+			margin-right: 0;
+		}
+	
+		.dropdown {
+			position: static;
+			display: none;
+			width: 100%;
+		}
+	
+		.menu-item:hover .dropdown {
+			display: none;
+		}
+	
+		.menu-link {
+			text-align: center;
+			padding: 10px 0;
+		}
+	}
+	

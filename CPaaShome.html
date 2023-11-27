@@ -2,112 +2,812 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CPaaS Home</title>
-    <link rel="stylesheet" type="text/css" href="CSS/cpaascss.css">
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>CPaaS Home</title>
+	<link rel="stylesheet" type="text/css" href="CSS/cpaascss.css" />
+	<link rel="icon" href="imagens/logo_telecall_9y6ceW.png" type="image/png" />
+	<link rel="stylesheet" type="text/css" href="CSS/button-darkmode.css" />
+	<link rel="stylesheet" type="text/css" href="CSS/dark-mode.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+		rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Saira:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+		rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <img src="imagens/modavo-1.png" alt="Logo da Empresa">
-        </div>
-        <main>
-            <button id="btnLogin" onclick="javascript:location.href='login.html'">Login</button>
-            <span id="lblBoasVindas"></span>
-            <button id="btnLogout" onclick="javascript:logout()">Sair</button>
-        </main>
-    </header>
-    <nav>
-        <div class="menu">
-            <ul class="nav_links">
-                <li><a href="https://modavo.com.br/cpaas/autentificacao-de-dois-fatores/" target="_blank">Produtos</a></li>
-                <li><a href="https://modavo.com.br/cpaas/tarifas-de-sms/" target="_blank">Tarifas</a></li>
-                <li><a href="https://cpaasapi.telecall.com.br/swagger/index.html" target="_blank">API</a></li>
-                <li><a href="https://modavo.com.br/cpaas/contato/" target="_blank">Central de ajuda</a></li>
-                <li id="linkServicos"><a href="#">Serviços</a></li>
-            </ul>
-        </div>
-    </nav>
-    <div class="container-flex">
-        <div class="container">
-            <img src="imagens/modavo-1.png" alt="Logo da Empresa" id="logosecundaria">
-            <h1>CPaaS Plataform</h1>
-        </div>
-        <div id="textomodavo">
-         <p>Descubra a solução de CPaaS da Modavo.<br>
-            Uma solução completa para integrar canais de<br>
-            comunicação empresarial, como SMS, autenticação<br>
-            de dois fatores, números máscara, transcrição de<br>
-            áudio e muito mais. Experimente agora!</p>
-        </div>
-    </div>
 
-    <div class="imgBox">
-        <img src="imagens/oqueé.png">
-        <img src="imagens/Captura de tela 2023-10-14 121757.png">
-        <img src="imagens/Captura de tela 2023-10-14 121847.png">
-    </div>
+	<!-- Barra de navegação -->
+	<nav id="navbar" class="navbar">
 
-    <footer>
-        <div id="informacoes-de-contato">
-            0800 654654 54654
-        </div>
-        <div id="links-de-navegacao">
-            <ul class="footer_links">
-                <li><a href="https://modavo.com.br/cpaas/autentificacao-de-dois-fatores/">Produtos</a></li>
-                <li><a href="https://modavo.com.br/cpaas/tarifas-de-sms/">Tarifas</a></li>
-                <li><a href="https://cpaasapi.telecall.com.br/swagger/index.html">API</a></li>
-                <li><a href="https://modavo.com.br/cpaas/contato/">Central de ajuda</a></li>
-                <li><a href="#">Para Empresas</a></li>
-                <li id="linkServicos"><a href="#">Serviços</a></li>
-            </ul>
-        </div>
-        <small><p>&copy; 2023 Projeto ADS. Todos os direitos reservados.</p></small>
-    </footer>
-    
-    <script>
-        let objetoEncontrado = null;
-        const btnLogin = document.getElementById("btnLogin");
-        const labelMostraNome = document.getElementById("lblBoasVindas");
-        const btnLogout = document.getElementById("btnLogout");
+		<div class="menu">
 
-        for (let item in localStorage) {
-            if (localStorage.hasOwnProperty(item)) {
-                let objetoString = localStorage.getItem(item);
-                let objeto = JSON.parse(objetoString);
+			<ul class="nav_links">
+				<div class="menu-item"><a href="index.html" class="linkTelecall" target="_blank">Telecall</a></div>
+				<li class="menu-item">
+					<a href="#doisFA" class="menu-link">2 FA</a>
+					<!-- Submenu dropdown para "2 FA" -->
+					<ul class="dropdown">
+						<li class="dropdown-item"><a href="#doisFA-comoFuncionaDoisFA" class="menu-link">Como funciona?</a></li>
+						<li class="dropdown-item"><a href="#doisFA-vantagens" class="menu-link">Vantagens</a></li>
+						<li class="dropdown-item"><a href="#doisFA-quemUsa" class="menu-link">Quem usa?</a></li>
+					</ul>
+				</li>
+				<li class="menu-item">
+					<a href="#numMascara" class="menu-link">Número Máscara</a>
+					<!-- Submenu dropdown para "Número Máscara" -->
+					<ul class="dropdown">
+						<li class="dropdown-item"><a href="#numMascara-comoFunciona" class="menu-link">Como funciona?</a></li>
+						<li class="dropdown-item"><a href="#numMascara-quemUsa" class="menu-link">Quem usa?</a></li>
+						<li class="dropdown-item"><a href="#numMascara-recursos" class="menu-link">Recursos Avançados</a></li>
 
-                if (objeto && objeto.isLogged === true) {
-                    objetoEncontrado = objeto;
-                    break; 
-                }
-            }
-        }
-        
-        if (objetoEncontrado) {
-            btnLogin.classList.add("invisible");
-            labelMostraNome.innerText = "Bem vindo(a), " + objetoEncontrado.login;
-            btnLogout.classList.remove("invisible");
-            
-        } else {
-            var linkServicos = document.getElementById("linkServicos");
-            var menuLinks = linkServicos.parentNode;
-            menuLinks.removeChild(linkServicos);
-            btnLogin.classList.remove("invisible");
-            btnLogout.classList.add("invisible");
-        }
+					</ul>
+				</li>
+				<li class="menu-item">
+					<a href="#verifiedCalls" class="menu-link">Google Verified Calls</a>
+					<!-- Submenu dropdown para "Google Verified Calls" -->
+					<ul class="dropdown">
+						<li class="dropdown-item"><a href="#verifiedCalls-solucao" class="menu-link">Solução</a></li>
+						<li class="dropdown-item"><a href="#verifiedCalls-compatibilidade" class="menu-link">Compatibilidade</a>
+						</li>
+						<li class="dropdown-item"><a href="#verifiedCalls-beneficios" class="menu-link">Benefícios</a></li>
+					</ul>
+				</li>
+				<li class="menu-item">
+					<a href="#smsProgramavel" class="menu-link">SMS Programável</a>
+					<!-- Submenu dropdown para "SMS Programável" -->
+					<ul class="dropdown">
+						<li class="dropdown-item"><a href="#smsProgramavel-comoFunciona" class="menu-link">Como Funciona?</a></li>
+						<li class="dropdown-item"><a href="#smsProgramavel-quemUsa" class="menu-link">Quem usa?</a></li>
+						<li class="dropdown-item"><a href="#smsProgramavel-beneficios" class="menu-link">Benefícios</a></li>
+						<li class="dropdown-item"><a href="#smsProgramavel-jornada" class="menu-link">Jornada do Cliente</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
 
-        logout=function(){
-            objetoEncontrado.isLogged = false;
-            const objetoEncontradoString = JSON.stringify(objetoEncontrado);
-            const usuario = objetoEncontrado.login.toLowerCase();
-            localStorage.setItem(usuario,objetoEncontradoString);
-            location.href="CPaaShome.html";
-        }
-    </script>
+		<label class="switch">
+			<input id="dark-mode-toggle" type="checkbox" onclick="toggleDarkMode()" />
+			<span class="slider">
+				<svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round"
+					stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+					<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+				</svg>
+			</span>
+		</label>
 
-    
+		<div class="organizaBtnNav">
+			<button type="button" id="btnAumentar">+</button>
+			<button type="button" id="btnDiminuir">-</button>
+			<div>
+				<a href="#TOPO" class="menu-link"><svg width="29" height="28" viewBox="0 0 1087 1086" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M543.673 0.0658875C243.79 0.0658875 0.898682 242.957 0.898682 542.84C0.898682 842.723 243.79 1085.61 543.673 1085.61C843.556 1085.61 1086.45 842.723 1086.45 542.84C1086.45 242.957 843.556 0.0658875 543.673 0.0658875ZM543.673 135.759L950.754 542.84H679.367V949.921H407.979V542.84H136.592L543.673 135.759Z"
+							fill="#ADD8E6" />
+					</svg></a>
+			</div>
+			<button id="btnLogin" onclick="javascript:location.href='login.html'">Login</button>
+			<span id="lblBoasVindas"></span>
+			<button id="btnLogout" onclick="javascript:logout()">Sair</button>
+		</div>
+
+	</nav>
+
+	<!-- Topo -->
+	<header>
+		<div class="container-flex-cpaas" id="TOPO">
+		</div>
+		<div class="containerCpaas">
+			<div id="textomodavo">
+				<img src="imagens/modavo-1.png" alt="Logo da Empresa" id="logosecundaria" />
+				<h1 id="tituloCpaas">CPaaS Plataform</h1>
+				<p>
+					Descubra a solução de CPaaS da Modavo.<br />
+					Uma solução completa para integrar canais de<br />
+					comunicação empresarial, como SMS, autenticação<br />
+					de dois fatores, números máscara, transcrição de<br />
+					áudio e muito mais. Experimente agora!
+				</p>
+			</div>
+			<div class="vazio"></div>
+		</div>
+	</header>
+
+
+
+	<section id="doisFA">
+		<div class="imgBox">
+			<div class="imgDoisFatores">
+				<img src="imagens/autentic-dois-fatores.jpg" />
+			</div>
+			<div class="paragrafoPadrao">
+				<p>
+				<h1>2 FA</h1>
+
+				<h3>Two-Factor Authentication<br>
+					<p>Autenticação de dois fatores
+				</h3>
+				O 2FA é um procedimento de segurança que garante que serão<br>
+				necessários 2 fatores únicos para liberação de uma ação. <br>
+				O primeiro fator é a senha que o usuário e o segundo pode ser <br>
+				autenticado via token, via detecção de impressão digital,<br>
+				reconhecimento facial, código enviado via sms, entre outros.<br><br>
+
+				<b>O 2FA permite que você:<br></b>
+				• <b>Envie</b> uma senha via SMS, voz ou e-mail para autenticação do usuário.<br>
+				• <b>Adicione</b> uma camada extra de segurança além da senha pessoal.<br>
+				• <b>Ofereça</b> maior segurança para usuários. <br>
+				</p>
+				</p>
+			</div>
+		</div>
+	</section>
+
+
+	<section id="doisFA-comoFuncionaDoisFA">
+		<h1>Como funciona??</h1>
+		<div class="card-container">
+			<!-- Card 1 -->
+			<div class="card">
+				<img src="imagens/Imagem1-tabela2FA.png" alt="Card Image">
+
+				<div class="card-content">
+					<p>Usuário acessa seu site o
+						aplicativo e digita a senha
+						cadastrada para entrar em
+						seu perfil ou completar uma
+						transação.</p>
+				</div>
+			</div>
+
+			<!-- Card 2 -->
+			<div class="card">
+				<img src="imagens/Imagem2-tabela2FA.png" alt="Card Image">
+
+				<div class="card-content">
+					<p>A Telecall recebe a tentativa
+						de login e solicita que o
+						usuário insira seu número de
+						telefone para autorizar o
+						acesso.</p>
+				</div>
+			</div>
+
+			<!-- Card 3 -->
+			<div class="card">
+				<img src="imagens/Imagem3-tabela2FA.png" alt="Card Image">
+
+				<div class="card-content">
+					<p>Após inserir seu número, a
+						Telecall envia para o usuário
+						por SMS, chamada ou e-mail
+						um código PIN de uso único.
+					</p>
+					<p>Esse código PIN é também
+						conhecido como OTP (One
+						Time Password).</p>
+				</div>
+			</div>
+
+			<!-- Card 4 -->
+			<div class="card">
+				<img src="imagens/Imagem4-tabela2FA.png" alt="Card Image">
+
+				<div class="card-content">
+					<p>O usuário insere o código no
+						site ou aplicativo para
+						concluir o processo de
+						verificação.
+					</p>
+				</div>
+			</div>
+
+			<!-- Card 5 -->
+
+	</section>
+
+
+	<div class="boxConteudo">
+		<section class="listVantagens" id="doisFA-vantagens">
+			<h1 class="h1ListaSVG">Vantagens</h1>
+
+			<div class="listaSVG">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="auto" viewBox="0 0 450 340" fill="none">
+					<path d="M323.488 340H0V170V0H338L450 180.119L323.488 340Z" fill="rgba(42,173,229,255)" />
+				</svg>
+				<p>Ofereça <b>segurança aprimorada</b> para seus clientes.
+				</p>
+			</div>
+			<div class="listaSVG">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="auto" viewBox="0 0 450 340" fill="none">
+					<path d="M323.488 340H0V170V0H338L450 180.119L323.488 340Z" fill="rgba(42,173,229,255)" />
+				</svg>
+				<p>Reduza casos de <b>fraude e invasões</b> e evite o acesso a dados por invasores.
+				</p>
+			</div>
+			<div class="listaSVG">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="auto" viewBox="0 0 450 340" fill="none">
+					<path d="M323.488 340H0V170V0H338L450 180.119L323.488 340Z" fill="rgba(42,173,229,255)" />
+				</svg>
+				<p>Envio de OTP por meio de <b>vários canais</b>, incluindo SMS, voz ou e-mail. </p>
+			</div>
+			<div class="listaSVG">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="auto" viewBox="0 0 450 340" fill="none">
+					<path d="M323.488 340H0V170V0H338L450 180.119L323.488 340Z" fill="rgba(42,173,229,255)" />
+				</svg>
+				<p>Flexibilidade de canais garante que o usuário conseguirá completar a tarefa<br>
+					desejada mesmo quando tiver problema com um deles. <br>
+					Exemplo: Enviar OTP por SMS, em caso de falha, enviar OTP por chamada <br>
+					de voz, em caso de outra falha, enviar por e-mail.
+				</p>
+			</div>
+			<div class="listaSVG">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="auto" viewBox="0 0 450 340" fill="none">
+					<path d="M323.488 340H0V170V0H338L450 180.119L323.488 340Z" fill="rgba(42,173,229,255)" />
+				</svg>
+				<p>API simples e de rápida implementação. </p>
+			</div>
+			<div class="listaSVG">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="auto" viewBox="0 0 450 340" fill="none">
+					<path d="M323.488 340H0V170V0H338L450 180.119L323.488 340Z" fill="rgba(42,173,229,255)" />
+				</svg>
+				<p>Plataforma intuitiva que permite visualizar relatórios de uso<br>
+					por dia, mês ou ano e pesquisar usando diversos critérios de filtro.
+				</p>
+			</div>
+		</section>
+		<div class="imgLista">
+			<img src="imagens/Imagem1.jpg" alt="Representação dos serviços">
+		</div>
+	</div>
+
+
+
+	<section id="doisFA-quemUsa">
+		<h1>Quem usa?</h1>
+		<div class="card-container">
+			<div class="card">
+				<img src="imagens/imagem1-cards2fa.png" alt="Card Image">
+				<h2>Finanças</h2>
+				<ul>
+					<li>Acesso ao portal/app</li>
+					<li>Autenticação para transações bancárias</li>
+					<li>Pagamentos Online (PicPay, PayPal)</li>
+					<li>Digital Wallets (Google Pay, Apple Pay, Samsung Pay)</li>
+				</ul>
+			</div>
+
+			<div class="card">
+				<img src="imagens/imagem2-cards2fa.png" alt="Card Image">
+				<h2>Saúde</h2>
+				<ul>
+					<li>Acesso ao
+						portal/app</li>
+					<li>Agendamentos</li>
+					<li>Tokens de autorização</li>
+					<li>Telemedicina</li>
+				</ul>
+			</div>
+
+			<div class="card">
+				<img src="imagens/imagem3-cards2fa.png" alt="Card Image">
+				<h2>Turismo</h2>
+				<ul>
+					<li>Acesso ao portal/app</li>
+					<li>Gestão de Reservas</li>
+					<li>Acesso ao histórico</li>
+					<li>Salvar dados de pagamentos</li>
+					<li>Recuperação de
+						Senha</li>
+				</ul>
+			</div>
+
+			<div class="card">
+				<img src="imagens/imagem4-cards2fa.png" alt="Card Image">
+				<h2>Varejo</h2>
+				<ul>
+					<li>Acesso ao
+						portal/app</li>
+					<li>Salvar dados de pagamentos</li>
+					<li>Acesso ao histórico</li>
+					<li>Recuperação de
+						Senha</li>
+					<li>Recibo Eletrônico</li>
+				</ul>
+			</div>
+
+			<div class="card">
+				<img src="imagens/imagem5-cards2fa.png" alt="Card Image">
+				<h2>Governo</h2>
+				<ul>
+					<li>Acesso ao
+						portal/app</li>
+					<li>Gestão de informações Agendamentos</li>
+					<li>Recuperação de
+						Senha</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+
+	<div class="fundoAzul">
+		<section id="numMascara">
+			<div class="imgBox">
+				<div>
+					<img src="imagens/celularNumMascara.png" />
+				</div>
+				<div class="paragrafoPadrao">
+					<p>
+					<h1>Número Máscara</h1>
+					<h3>Proteja identidades profissionais</h3>
+
+					Garanta aos seus clientes a capacidade de fazer chamadas e enviar<br>
+					mensagens sem expor seus números de telefone pessoais.<br><br>
+
+					• <b>Mascara</b> um número de telefone para interações com mais
+					privacidade.<br>
+					• <b>Permite</b> que empresas façam negócios usando menos números de telefone.<br>
+					• <b>Ofereça</b> uma experiência mais segura e profissional.<br>
+
+					</p>
+				</div>
+
+			</div>
+		</section>
+	</div>
+
+
+	<section id="numMascara-comoFunciona" class="organizaSection">
+		<h1>Como funciona?</h1>
+		<table style="text-align: center;">
+			<tr>
+				<td class="bgazulClaro">
+					<p>Usuário faz uma chamada<br>
+						através de um aplicativo.<br>
+					</p>
+				</td>
+				<td class="bgazulMedio">
+					<p>Plataforma mascara<br>
+						o número original.</p>
+				</td>
+				<td class="bgazulForte">
+					<p>Ambas as partes<br>
+						são conectadas.</p>
+				</td>
+			</tr>
+
+			<tr>
+				<td colspan="3" style="text-align: center;"><img src="imagens/NumMasccomoFunciona.jpg" alt=""></td>
+			</tr>
+
+			<tr>
+				<td class="bgazulClaro">
+					<p>Ex: usuário liga para o<br>
+						entregador ou motorista<br>
+						de taxi ou entra em<br>
+						contato com a central de<br>
+						atendimento.</p>
+				</td>
+				<td class="bgazulMedio">
+					<p>A plataforma recebe a<br>
+						chamada e mascara o<br>
+						número antes de conectar<br>
+						com o destinatário.</p>
+				</td>
+				<td class="bgazulForte">
+					<p>A plataforma conecta ambas<br>
+						as partes mantendo a<br>
+						privacidade dos dois.
+					</p>
+				</td>
+			</tr>
+		</table>
+	</section>
+
+
+
+	<section id="numMascara-quemUsa" class="organizaSection">
+		<h1>Quem usa?</h1>
+		<div class="card-container">
+			<div class="card">
+				<img src="imagens/Imagem1-cardsNumMasc.png" alt="Card Image">
+				<h2>Apps de Transporte</h2>
+				<p>Permite que motorista e<br>
+					passageiro se comuniquem<br>
+					sem compartilhar seus<br>
+					números pessoais.</p>
+			</div>
+
+			<div class="card">
+				<img src="imagens/Imagem2-cardsNumMasc.png" alt="Card Image">
+				<h2>Apps de
+					Relacionamento</h2>
+				<p>Permite uma maneira<br>
+					privada e segura para<br>
+					usuários interagirem sem<br>
+					expor contatos pessoais.</p>
+			</div>
+
+			<div class="card">
+				<img src="imagens/Imagem3-cardsNumMasc.png" alt="Card Image">
+				<h2>E-commerce</h2>
+				<p>Permite que clientes<br>
+					entrem em contato através<br>
+					do aplicativo. Podem<br>
+					também integrar chamadas<br>
+					internacionais.</p>
+			</div>
+
+			<div class="card">
+				<img src="imagens/Imagem4-cardsNumMasc.png" alt="Card Image">
+				<h2>Entregas
+					& Logística</h2>
+				<p>Mantenha seu cliente<br>
+					informado sobre<br>
+					entregas e serviços, tire<br>
+					dúvidas, etc</p>
+			</div>
+		</div>
+	</section>
+
+
+	<div class="fundoAzul">
+		<section id="numMascara-recursos">
+			<div class="organizaSection">
+				<h1>Recursos Avançados</h1>
+				<ul class="paragrafoPadrao">
+					<li><b>SMS</b> - Número máscara é totalmente funcional para chamadas de voz e SMS.</li>
+					<li><b>Geo Match</b> - Combine o código do país do número mascarado com o da chamada de origem passando pro
+						cliente a impressão de que vocês estão na mesma região.</li>
+					<li><b>Gestão de Sessões</b> - Habilite números máscara permanentes, bloqueie chamadas indesejadas, validade
+						de
+						sessão e etc.</li>
+					<li><b>Relatórios</b> - Acesso direto do cliente à relatórios detalhados.</li>
+					<li><b>Números Simultâneos</b> - Use o mesmo número máscara em várias ligações simultâneas.</li>
+					<li><b>Triagem de Conteúdo</b> - Recurso SMS onde você pode sinalizar conteúdos sensíveis para proteger dados
+						do
+						cliente.</li>
+					<li><b>Escalabilidade Ilimitada</b> - Compre e adicione números conforme necessário.</li>
+				</ul>
+			</div>
+		</section>
+	</div>
+
+
+
+	<section id="verifiedCalls">
+		<div class="imgBox">
+			<div class="paragrafoEspecial">
+				<p>
+				<h1>Chamadas Verificadas</h1>
+				Esse novo recurso do <b>Google</b>, exclusivo para<br>
+				telefones <b>Android</b>, permite que empresas exibam<br>
+				para o cliente na hora da chamada sua marca,<br>
+				logotipo e até mesmo o motivo da chamada.<br>
+				<b>A Telecall é a primeira operadora de telecom no<br>
+					Brasil a oferecer esse recurso do Google.</b>
+				</p>
+			</div>
+			<div id="ajusteIMGVerifiedCalls">
+				<img src="imagens/VerifiedCallsimg.jpg" />
+			</div>
+		</div>
+	</section>
+
+	<div class="fundoAzul">
+		<section id="verifiedCalls-solucao">
+			<div class="imgBox">
+				<div class="paragrafoPadrao">
+					<p>
+					<h1>Solução</h1>
+					<h3><b>Ligações de Spam - O problema</b></h3>
+					<ul>
+						<li>O Brasil é o país que mais sofre com ligações<br>
+							de spam no mundo.</li>
+						<li>Desde 2017, as chamadas telefônicas de spam<br>
+							noBrasil aumentaram 141%.</li>
+						<li>O brasileiro recebe em média 49,9 ligações de<br>
+							spam por mês.</li>
+					</ul>
+					</p>
+				</div>
+				<div>
+					<img src="imagens/graficoSpam.png" />
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<section id="verifiedCalls-compatibilidade">
+		<div class="imgBox">
+			<div class="paragrafoPadrao">
+				<h1>Compatibilidade</h1>
+				<ul>
+					<li>
+						<strong>Exclusivo para sistema operacional Android</strong> através do aplicativo Telefone.
+					</li><br>
+					<li>
+						Pré-instalado em telefones mais recentes ou pode ser baixado do
+						<strong>Google Play Store</strong> para a maioria dos dispositivos com
+						<strong>Android 9.0</strong>.
+					</li><br>
+					<li>
+						Hoje no Brasil existem quase <strong>239 milhões</strong> de celulares smartphone ativos,
+						sendo que o sistema <strong>Android</strong> detém uma participação de mais de
+						<strong>86%</strong> do mercado de sistema operacional móvel no país.
+					</li>
+				</ul>
+			</div>
+			<div>
+				<img src="imagens/google-app-telefone-tecnoblog.jpg">
+			</div>
+		</div>
+	</section>
+
+
+	<div class="fundoAzul">
+		<section id="verifiedCalls-beneficios">
+			<div class="paragrafoPadrao">
+				<h1>Benefícios</h1>
+				<ul>
+					<li>
+						<strong>Estabeleça Confiança:</strong> Clientes são mais propensos a atender chamadas de organizações com os
+						quais estão familiarizadas e com as quais já têm relação.
+					</li>
+					<li>
+						<strong>Agilize a Conexão:</strong> Quando o motivo da chamada é claro, a chance de o cliente atender é
+						muito maior e a conexão com ele mais rápida e eficiente.
+					</li>
+					<li>
+						<strong>Melhore a Experiência do Cliente:</strong> O nome da marca, logotipo e a visualização do motivo da
+						chamada oferecem uma experiência melhor e muito mais amigável para o cliente.
+					</li>
+				</ul>
+
+			</div>
+		</section>
+	</div>
+
+
+	<section id="smsProgramavel">
+		<div class="paragrafoPadrao" id="smsSubtituloh2">
+			<p>
+			<h2>SMS é a forma mais rápida, eficiente e de baixo custo<br>
+				para se comunicar com seus clientes.</h2>
+			</p>
+		</div>
+		<div class="organizaTextoBox">
+			<div class="flexTexto">
+				<p>
+				<h1>98%</h1>
+				de taxa de abertura.
+				</p>
+			</div>
+			<div class="flexTexto">
+				<p>
+				<h1>90%</h1>
+				dos SMS são lidos em até 3 minutos.
+				</p>
+			</div>
+			<div class="flexTexto">
+				<p>
+				<h1>80%</h1>
+				das pessoas interagem com SMS comerciais.
+				</p>
+			</div>
+			<div class="flexTexto">
+				<p>
+				<h1>35x</h1>
+				maior a probabilidade de um cliente abrir um SMS do que um e-mail.
+				</p>
+			</div>
+		</div>
+	</section>
+
+
+
+	<section id="smsProgramavel-comoFunciona">
+		<div class="imgBox">
+			<div class="imgDoisFatores">
+				<img src="imagens/imagem-smsprog.png">
+			</div>
+			<div class="paragrafoPadrao">
+				<p>
+				<h1>Como Funciona?</h1>
+
+				<h3>SMS Programável<br>
+					Conecte-se com seus clientes.</h3>
+				É muito provável que você já tenha recebido uma<br>
+				mensagem de texto de uma empresa ou organização.<br>
+				Com uma API, qualquer empresa pode enviar mensagens<br>
+				de texto e impactar clientes, prospects ou fornecedores<br>
+				como parte de seu processo comercial.<br>
+				Com essa ferramenta você envia mensagens de SMS com<br>
+				as informações que o seu cliente precisa e com a<br>
+				segurança, a velocidade e a confiabilidade que você<br>
+				espera.
+
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="smsProgramavel-quemUsa">
+		<div class="smsBoxImg">
+			<h1>São muitos os caso de uso, mas veja alguns exemplos:</h1>
+
+			<div class="image-container">
+				<div>
+					<img src="imagens/Imagem1-cardsQuemUsaSMS.png" alt="Imagem 1">
+					<p>Divulgação</p>
+				</div>
+
+				<div>
+					<img src="imagens/Imagem2-cardsQuemUsaSMS.png" alt="Imagem 2">
+					<p>Transações</p>
+				</div>
+
+				<div>
+					<img src="imagens/Imagem3-cardsQuemUsaSMS.png" alt="Imagem 3">
+					<p>Segurança</p>
+				</div>
+
+				<div>
+					<img src="imagens/Imagem4-cardsQuemUsaSMS.png" alt="Imagem 4">
+					<p>Suporte ao cliente</p>
+				</div>
+
+				<div>
+					<img src="imagens/Imagem5-cardsQuemUsaSMS.png" alt="Imagem 5">
+					<p>Notificações</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	<div class="fundoAzul">
+		<section id="smsProgramavel-beneficios">
+			<div class="paragrafoPadrao">
+				<h2>Benefícios do SMS</h2>
+				<ul>
+					<li>Comunicação rápida, efetiva e escalável.</li>
+					<li>Baixo custo.</li>
+					<li>Alta taxa de entrega e leitura.</li>
+					<li>Personalização de data, hora e conteúdo.</li>
+					<li>Agendamento de campanhas.</li>
+					<li>Interação bidirecional: recebimento de respostas.</li>
+					<li>Plataforma user-friendly.</li>
+					<li>Acompanhamento de métricas e relatórios.</li>
+				</ul>
+			</div>
+		</section>
+	</div>
+
+
+	<div class="imgDiagrama" id="smsProgramavel-jornada">
+		<img src="imagens/jornadacliente-imagem.png" alt="">
+	</div>
+
+
+
+
+
+	<footer>
+		<div id="informacoes-de-contato">0800 654654 54654</div>
+		<div id="links-de-navegacao">
+			<ul class="footer_links">
+				<li><a href="index.html" class="menu-link" target="_blank">Telecall</a></li>
+				<li><a href="#doisFA" class="menu-link">2 FA</a></li>
+				<li><a href="#numMascara" class="menu-link">Número Máscara</a></li>
+				<li><a href="#verifiedCalls" class="menu-link">Google Verified Calls</a></li>
+				<li><a href="#smsProgramavel" class="menu-link">SMS Programável</a></li>
+			</ul>
+		</div>
+		<small>
+			<p>&copy; 2023 Projeto ADS. Todos os direitos reservados.</p>
+		</small>
+	</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+	<script src="javascript/font-size.js"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			var links = document.querySelectorAll('.menu-link');
+
+			links.forEach(function (link) {
+				link.addEventListener('click', function (e) {
+					e.preventDefault();
+
+					var targetId = this.getAttribute('href').substring(1);
+					var targetElement = document.getElementById(targetId);
+
+					if (targetElement) {
+						targetElement.scrollIntoView({ behavior: 'smooth' });
+					}
+				});
+			});
+		});
+
+	</script>
+
+	<script>
+		// Obtém a barra de navegação
+		var navbar = document.getElementById("navbar");
+
+		// Adiciona um ouvinte de rolagem à janela
+		window.onscroll = function () {
+			// Obtém a posição de rolagem vertical
+			var scrollY = window.scrollY || window.pageYOffset;
+
+			// Atualiza a posição da barra de navegação
+			navbar.style.top = scrollY + "px";
+		};
+
+
+	</script>
+
+	<script src="javascript/dark-mode.js"></script>
+	<script>
+		// Inicializa a variável para armazenar informações do usuário logado
+		let objetoEncontrado = null;
+		// Obtém referências aos elementos HTML relevantes
+		const btnLogin = document.getElementById("btnLogin");
+		const labelMostraNome = document.getElementById("lblBoasVindas");
+		const btnLogout = document.getElementById("btnLogout");
+		// Loop através dos itens no localStorage para encontrar o usuário logado
+		for (let item in localStorage) {
+			if (localStorage.hasOwnProperty(item)) {
+				// Obtém o objeto do localStorage e converte para formato JavaScript
+				let objetoString = localStorage.getItem(item);
+				let objeto = JSON.parse(objetoString);
+				// Verifica se o objeto é válido e se o usuário está logado
+				if (objeto && objeto.isLogged === true) {
+					objetoEncontrado = objeto;
+					break;
+				}
+			}
+		}
+		// Verifica se um usuário logado foi encontrado
+		if (objetoEncontrado) {
+			// Esconde o botão de login, exibe uma mensagem de boas-vindas e mostra o botão de logout
+			btnLogin.classList.add("invisible");
+			labelMostraNome.innerText = "Bem vindo(a), " + objetoEncontrado.login;
+			btnLogout.classList.remove("invisible");
+		} else {
+			// Remove o link de serviços do menu, exibe o botão de login e esconde o botão de logout
+			btnLogin.classList.remove("invisible");
+			btnLogout.classList.add("invisible");
+		}
+		// Função de logout que atualiza o estado de login e redireciona para a página CPaaShome.html
+		logout = function () {
+			objetoEncontrado.isLogged = false;
+			const objetoEncontradoString = JSON.stringify(objetoEncontrado);
+			const usuario = objetoEncontrado.login.toLowerCase();
+			localStorage.setItem(usuario, objetoEncontradoString);
+			location.href = "login.html";
+		};
+	</script>
 </body>
+
 </html>

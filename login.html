@@ -2,50 +2,115 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="CSS/login.css">
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="CSS/login.css" />
+	<link rel="icon" href="imagens/logo_telecall_9y6ceW.png" type="image/png" />
+	<link rel="stylesheet" type="text/css" href="CSS/button-darkmode.css" />
+	<link rel="stylesheet" type="text/css" href="CSS/dark-mode.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
+
 <body>
-    <div class="container">
-        <form class="form" action="javascript:validaLogin()">
-            <div class="form-header">
-                <h1 class="title">Login</h1>
-            </div>
-            <div class="input-box">
-                <label for="login">Nome de Usuário</label>
-                <input type="text" id="login" placeholder="Login">
-            </div>
-            <div class="input-box">
-                <label for="senha">Senha</label>
-                <input type="password" id="senha" placeholder="Senha">
-            </div>
-            <div class="button-box">
-                <button id="enviarButton">Entrar</button>
-                <button id="cadastrarButton"><a href="formulario.html">Cadastrar Novo Usuário</a></button>
-            </div>
-        </form>
-    </div>
+	<header>
+		<div class="logo">
+			<a href="index.html" target="_blank"><img src="imagens/telecall-logo-white-1.png" alt="Logo da Empresa" /></a>
+		</div>
+		<div class="organizaBtnNav">
+			<button type="button" id="btnAumentar">+</button>
+			<button type="button" id="btnDiminuir">-</button>
+			<label class="switch">
+				<input id="dark-mode-toggle" type="checkbox" onclick="toggleDarkMode()" />
+				<span class="slider">
+					<svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round"
+						stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+						<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+					</svg>
+				</span>
+			</label>
+		</div>
+	</header>
 
+	<div class="container" id="divLogin">
+		<form class="divForm" action="javascript:validaLogin()">
+			<div class="form-header">
+				<h1 class="title">Login</h1>
+			</div>
+			<div class="input-box">
+				<label for="login">Nome de Usuário</label>
+				<input type="text" id="login" placeholder="Login" maxlength="6" minlength="6" />
+			</div>
+			<div class="input-box">
+				<label for="senha">Senha</label>
+				<input type="password" id="senha" placeholder="Senha" maxlength="8" minlength="8" />
+				<span id="mensagemErro" style="color: red;"></span>
 
-    <script>
-        validaLogin = function () {
-            const usuario = document.getElementById("login").value.toLowerCase();
-            const senha = document.getElementById("senha").value;
+			</div>
+			<div class="button-box">
+				<button id="enviarButton">Entrar</button>
+				<button id="cadastrarButton">
+					<a href="formulario.html">Cadastrar Novo Usuário</a>
+				</button>
+			</div>
+		</form>
+	</div>
 
-            const objetoUsuario = localStorage.getItem(usuario);
-            const usuarioEncontrado = JSON.parse(objetoUsuario);
-                if (usuarioEncontrado != null && usuarioEncontrado.senha === senha) {
-                    usuarioEncontrado.isLogged = true;
-                    const usuarioEncontradoString = JSON.stringify(usuarioEncontrado);
-                    localStorage.setItem(usuario, usuarioEncontradoString);
-                    location.href = 'CPaaShome.html';
-                } else {
-                    alert('Usuário ou senha incorretos');
-                }
-        }
-    </script>
+	<footer>
+		<div id="informacoes-de-contato">
+			<p>(21) 30301010</p>
+		</div>
+
+		<div class="organizaFooter">
+			<small>
+				<p>&copy; 2023 Projeto ADS. Todos os direitos reservados.</p>
+			</small>
+			<div class="iconesBox">
+				<div id="div-icon-facebook">
+					<a href="https://www.facebook.com/TelecallBr"><img src="imagens/facebook.png" id="iconesSociais"
+							target="_blank"></a>
+				</div>
+				<div id="div-icon-whatsapp">
+					<a href="https://api.whatsapp.com/send?phone=552130301010&text=%23Comercial"><img src="imagens/whatsapp.png"
+							id="iconesSociais" target="_blank"></a>
+				</div>
+				<div id="div-icon-instagram">
+					<a href="https://www.instagram.com/telecallbr/"><img src="imagens/instagram.png" id="iconesSociais"
+							target="_blank"></a>
+				</div>
+				<div id="div-icon-linkedin">
+					<a href="https://www.linkedin.com/company/telecall/"><img src="imagens/linkedin.png" id="iconesSociais"
+							target="_blank"></a>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="javascript/font-size.js"></script>
+	<script src="javascript/dark-mode.js"></script>
+	<script>
+		validaLogin = function () {
+			const usuario = document.getElementById("login").value.toLowerCase();
+			const senha = document.getElementById("senha").value;
+
+			const objetoUsuario = localStorage.getItem(usuario);
+			const usuarioEncontrado = JSON.parse(objetoUsuario);
+
+			// Adicione este span no HTML onde você deseja exibir a mensagem de erro
+			const mensagemErroSpan = document.getElementById("mensagemErro");
+
+			if (usuarioEncontrado != null && usuarioEncontrado.senha === senha) {
+				usuarioEncontrado.isLogged = true;
+				const usuarioEncontradoString = JSON.stringify(usuarioEncontrado);
+				localStorage.setItem(usuario, usuarioEncontradoString);
+				location.href = "CPaaShome.html";
+			} else {
+				// Atualize o conteúdo do span com a mensagem de erro
+				mensagemErroSpan.innerText = "Usuário ou senha incorretos";
+			}
+		};
+	</script>
 </body>
+
 </html>
